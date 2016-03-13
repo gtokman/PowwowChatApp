@@ -14,6 +14,7 @@
 		02F3D21A1C950181006C77A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02F3D2181C950181006C77A7 /* LaunchScreen.storyboard */; };
 		02F3D2251C950181006C77A7 /* PowwowChatAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F3D2241C950181006C77A7 /* PowwowChatAppTests.swift */; };
 		02F3D2301C950181006C77A7 /* PowwowChatAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F3D22F1C950181006C77A7 /* PowwowChatAppUITests.swift */; };
+		27904D27DEF9FC1D25FFFC70 /* Pods_PowwowChatApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFF0A7EA7D2B4CE4F77B4108 /* Pods_PowwowChatApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,9 @@
 		02F3D22B1C950181006C77A7 /* PowwowChatAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PowwowChatAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		02F3D22F1C950181006C77A7 /* PowwowChatAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowwowChatAppUITests.swift; sourceTree = "<group>"; };
 		02F3D2311C950181006C77A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7982DB2BBE0E319BCF547D44 /* Pods-PowwowChatApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PowwowChatApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-PowwowChatApp/Pods-PowwowChatApp.release.xcconfig"; sourceTree = "<group>"; };
+		DFF0A7EA7D2B4CE4F77B4108 /* Pods_PowwowChatApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PowwowChatApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF115B0AE3CC5D8459D32DE3 /* Pods-PowwowChatApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PowwowChatApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PowwowChatApp/Pods-PowwowChatApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27904D27DEF9FC1D25FFFC70 /* Pods_PowwowChatApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +87,7 @@
 				02F3D2231C950181006C77A7 /* PowwowChatAppTests */,
 				02F3D22E1C950181006C77A7 /* PowwowChatAppUITests */,
 				02F3D20D1C950181006C77A7 /* Products */,
+				A2FFF6D3B3880144A26D01F4 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -146,6 +152,7 @@
 		02F3D2401C950EBB006C77A7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DFF0A7EA7D2B4CE4F77B4108 /* Pods_PowwowChatApp.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -165,6 +172,15 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		A2FFF6D3B3880144A26D01F4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FF115B0AE3CC5D8459D32DE3 /* Pods-PowwowChatApp.debug.xcconfig */,
+				7982DB2BBE0E319BCF547D44 /* Pods-PowwowChatApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -172,9 +188,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 02F3D2341C950181006C77A7 /* Build configuration list for PBXNativeTarget "PowwowChatApp" */;
 			buildPhases = (
+				B88C05FDFDB60324E1327D4D /* Check Pods Manifest.lock */,
 				02F3D2081C950181006C77A7 /* Sources */,
 				02F3D2091C950181006C77A7 /* Frameworks */,
 				02F3D20A1C950181006C77A7 /* Resources */,
+				C126F49E4B7B0DE83CE8A487 /* Embed Pods Frameworks */,
+				8D2C8F230B03CE51E701DA2A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -291,6 +310,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8D2C8F230B03CE51E701DA2A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PowwowChatApp/Pods-PowwowChatApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B88C05FDFDB60324E1327D4D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C126F49E4B7B0DE83CE8A487 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PowwowChatApp/Pods-PowwowChatApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		02F3D2081C950181006C77A7 /* Sources */ = {
@@ -436,6 +503,7 @@
 		};
 		02F3D2351C950181006C77A7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF115B0AE3CC5D8459D32DE3 /* Pods-PowwowChatApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -448,6 +516,7 @@
 		};
 		02F3D2361C950181006C77A7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7982DB2BBE0E319BCF547D44 /* Pods-PowwowChatApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -525,6 +594,7 @@
 				02F3D2361C950181006C77A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		02F3D2371C950181006C77A7 /* Build configuration list for PBXNativeTarget "PowwowChatAppTests" */ = {
 			isa = XCConfigurationList;
@@ -533,6 +603,7 @@
 				02F3D2391C950181006C77A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		02F3D23A1C950181006C77A7 /* Build configuration list for PBXNativeTarget "PowwowChatAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -541,6 +612,7 @@
 				02F3D23C1C950181006C77A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
