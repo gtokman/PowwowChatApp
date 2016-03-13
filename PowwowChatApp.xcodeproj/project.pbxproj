@@ -1,0 +1,505 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		02F3D2101C950181006C77A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F3D20F1C950181006C77A7 /* AppDelegate.swift */; };
+		02F3D2121C950181006C77A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F3D2111C950181006C77A7 /* ViewController.swift */; };
+		02F3D2151C950181006C77A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02F3D2131C950181006C77A7 /* Main.storyboard */; };
+		02F3D2171C950181006C77A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02F3D2161C950181006C77A7 /* Assets.xcassets */; };
+		02F3D21A1C950181006C77A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02F3D2181C950181006C77A7 /* LaunchScreen.storyboard */; };
+		02F3D2251C950181006C77A7 /* PowwowChatAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F3D2241C950181006C77A7 /* PowwowChatAppTests.swift */; };
+		02F3D2301C950181006C77A7 /* PowwowChatAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F3D22F1C950181006C77A7 /* PowwowChatAppUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		02F3D2211C950181006C77A7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 02F3D2041C950181006C77A7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 02F3D20B1C950181006C77A7;
+			remoteInfo = PowwowChatApp;
+		};
+		02F3D22C1C950181006C77A7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 02F3D2041C950181006C77A7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 02F3D20B1C950181006C77A7;
+			remoteInfo = PowwowChatApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		02F3D20C1C950181006C77A7 /* PowwowChatApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PowwowChatApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		02F3D20F1C950181006C77A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		02F3D2111C950181006C77A7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		02F3D2141C950181006C77A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		02F3D2161C950181006C77A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		02F3D2191C950181006C77A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		02F3D21B1C950181006C77A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		02F3D2201C950181006C77A7 /* PowwowChatAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PowwowChatAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		02F3D2241C950181006C77A7 /* PowwowChatAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowwowChatAppTests.swift; sourceTree = "<group>"; };
+		02F3D2261C950181006C77A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		02F3D22B1C950181006C77A7 /* PowwowChatAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PowwowChatAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		02F3D22F1C950181006C77A7 /* PowwowChatAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowwowChatAppUITests.swift; sourceTree = "<group>"; };
+		02F3D2311C950181006C77A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		02F3D2091C950181006C77A7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		02F3D21D1C950181006C77A7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		02F3D2281C950181006C77A7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		02F3D2031C950181006C77A7 = {
+			isa = PBXGroup;
+			children = (
+				02F3D20E1C950181006C77A7 /* PowwowChatApp */,
+				02F3D2231C950181006C77A7 /* PowwowChatAppTests */,
+				02F3D22E1C950181006C77A7 /* PowwowChatAppUITests */,
+				02F3D20D1C950181006C77A7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		02F3D20D1C950181006C77A7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				02F3D20C1C950181006C77A7 /* PowwowChatApp.app */,
+				02F3D2201C950181006C77A7 /* PowwowChatAppTests.xctest */,
+				02F3D22B1C950181006C77A7 /* PowwowChatAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		02F3D20E1C950181006C77A7 /* PowwowChatApp */ = {
+			isa = PBXGroup;
+			children = (
+				02F3D20F1C950181006C77A7 /* AppDelegate.swift */,
+				02F3D2111C950181006C77A7 /* ViewController.swift */,
+				02F3D2131C950181006C77A7 /* Main.storyboard */,
+				02F3D2161C950181006C77A7 /* Assets.xcassets */,
+				02F3D2181C950181006C77A7 /* LaunchScreen.storyboard */,
+				02F3D21B1C950181006C77A7 /* Info.plist */,
+			);
+			path = PowwowChatApp;
+			sourceTree = "<group>";
+		};
+		02F3D2231C950181006C77A7 /* PowwowChatAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				02F3D2241C950181006C77A7 /* PowwowChatAppTests.swift */,
+				02F3D2261C950181006C77A7 /* Info.plist */,
+			);
+			path = PowwowChatAppTests;
+			sourceTree = "<group>";
+		};
+		02F3D22E1C950181006C77A7 /* PowwowChatAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				02F3D22F1C950181006C77A7 /* PowwowChatAppUITests.swift */,
+				02F3D2311C950181006C77A7 /* Info.plist */,
+			);
+			path = PowwowChatAppUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		02F3D20B1C950181006C77A7 /* PowwowChatApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 02F3D2341C950181006C77A7 /* Build configuration list for PBXNativeTarget "PowwowChatApp" */;
+			buildPhases = (
+				02F3D2081C950181006C77A7 /* Sources */,
+				02F3D2091C950181006C77A7 /* Frameworks */,
+				02F3D20A1C950181006C77A7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PowwowChatApp;
+			productName = PowwowChatApp;
+			productReference = 02F3D20C1C950181006C77A7 /* PowwowChatApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		02F3D21F1C950181006C77A7 /* PowwowChatAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 02F3D2371C950181006C77A7 /* Build configuration list for PBXNativeTarget "PowwowChatAppTests" */;
+			buildPhases = (
+				02F3D21C1C950181006C77A7 /* Sources */,
+				02F3D21D1C950181006C77A7 /* Frameworks */,
+				02F3D21E1C950181006C77A7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				02F3D2221C950181006C77A7 /* PBXTargetDependency */,
+			);
+			name = PowwowChatAppTests;
+			productName = PowwowChatAppTests;
+			productReference = 02F3D2201C950181006C77A7 /* PowwowChatAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		02F3D22A1C950181006C77A7 /* PowwowChatAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 02F3D23A1C950181006C77A7 /* Build configuration list for PBXNativeTarget "PowwowChatAppUITests" */;
+			buildPhases = (
+				02F3D2271C950181006C77A7 /* Sources */,
+				02F3D2281C950181006C77A7 /* Frameworks */,
+				02F3D2291C950181006C77A7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				02F3D22D1C950181006C77A7 /* PBXTargetDependency */,
+			);
+			name = PowwowChatAppUITests;
+			productName = PowwowChatAppUITests;
+			productReference = 02F3D22B1C950181006C77A7 /* PowwowChatAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		02F3D2041C950181006C77A7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = garytokman;
+				TargetAttributes = {
+					02F3D20B1C950181006C77A7 = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+					02F3D21F1C950181006C77A7 = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = 02F3D20B1C950181006C77A7;
+					};
+					02F3D22A1C950181006C77A7 = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = 02F3D20B1C950181006C77A7;
+					};
+				};
+			};
+			buildConfigurationList = 02F3D2071C950181006C77A7 /* Build configuration list for PBXProject "PowwowChatApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 02F3D2031C950181006C77A7;
+			productRefGroup = 02F3D20D1C950181006C77A7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				02F3D20B1C950181006C77A7 /* PowwowChatApp */,
+				02F3D21F1C950181006C77A7 /* PowwowChatAppTests */,
+				02F3D22A1C950181006C77A7 /* PowwowChatAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		02F3D20A1C950181006C77A7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02F3D21A1C950181006C77A7 /* LaunchScreen.storyboard in Resources */,
+				02F3D2171C950181006C77A7 /* Assets.xcassets in Resources */,
+				02F3D2151C950181006C77A7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		02F3D21E1C950181006C77A7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		02F3D2291C950181006C77A7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		02F3D2081C950181006C77A7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02F3D2121C950181006C77A7 /* ViewController.swift in Sources */,
+				02F3D2101C950181006C77A7 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		02F3D21C1C950181006C77A7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02F3D2251C950181006C77A7 /* PowwowChatAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		02F3D2271C950181006C77A7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02F3D2301C950181006C77A7 /* PowwowChatAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		02F3D2221C950181006C77A7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 02F3D20B1C950181006C77A7 /* PowwowChatApp */;
+			targetProxy = 02F3D2211C950181006C77A7 /* PBXContainerItemProxy */;
+		};
+		02F3D22D1C950181006C77A7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 02F3D20B1C950181006C77A7 /* PowwowChatApp */;
+			targetProxy = 02F3D22C1C950181006C77A7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		02F3D2131C950181006C77A7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				02F3D2141C950181006C77A7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		02F3D2181C950181006C77A7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				02F3D2191C950181006C77A7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		02F3D2321C950181006C77A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		02F3D2331C950181006C77A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		02F3D2351C950181006C77A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PowwowChatApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.garytokman.PowwowChatApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		02F3D2361C950181006C77A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PowwowChatApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.garytokman.PowwowChatApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		02F3D2381C950181006C77A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PowwowChatAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.garytokman.PowwowChatAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PowwowChatApp.app/PowwowChatApp";
+			};
+			name = Debug;
+		};
+		02F3D2391C950181006C77A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PowwowChatAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.garytokman.PowwowChatAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PowwowChatApp.app/PowwowChatApp";
+			};
+			name = Release;
+		};
+		02F3D23B1C950181006C77A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PowwowChatAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.garytokman.PowwowChatAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = PowwowChatApp;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		02F3D23C1C950181006C77A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PowwowChatAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.garytokman.PowwowChatAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = PowwowChatApp;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		02F3D2071C950181006C77A7 /* Build configuration list for PBXProject "PowwowChatApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02F3D2321C950181006C77A7 /* Debug */,
+				02F3D2331C950181006C77A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		02F3D2341C950181006C77A7 /* Build configuration list for PBXNativeTarget "PowwowChatApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02F3D2351C950181006C77A7 /* Debug */,
+				02F3D2361C950181006C77A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		02F3D2371C950181006C77A7 /* Build configuration list for PBXNativeTarget "PowwowChatAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02F3D2381C950181006C77A7 /* Debug */,
+				02F3D2391C950181006C77A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		02F3D23A1C950181006C77A7 /* Build configuration list for PBXNativeTarget "PowwowChatAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02F3D23B1C950181006C77A7 /* Debug */,
+				02F3D23C1C950181006C77A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 02F3D2041C950181006C77A7 /* Project object */;
+}
