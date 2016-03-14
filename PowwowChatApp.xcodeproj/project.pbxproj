@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		029339461C96564C00EE8B97 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029339451C96564C00EE8B97 /* User.swift */; };
 		02F3D2101C950181006C77A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F3D20F1C950181006C77A7 /* AppDelegate.swift */; };
 		02F3D2121C950181006C77A7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F3D2111C950181006C77A7 /* LoginViewController.swift */; };
 		02F3D2151C950181006C77A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02F3D2131C950181006C77A7 /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 		02F3D2251C950181006C77A7 /* PowwowChatAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F3D2241C950181006C77A7 /* PowwowChatAppTests.swift */; };
 		02F3D2301C950181006C77A7 /* PowwowChatAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F3D22F1C950181006C77A7 /* PowwowChatAppUITests.swift */; };
 		02F3D2441C960368006C77A7 /* LoginViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F3D2431C960368006C77A7 /* LoginViewControllerExtension.swift */; };
+		02FE13C71C966AB4005E8DF1 /* MasterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FE13C61C966AB4005E8DF1 /* MasterTableViewController.swift */; };
 		27904D27DEF9FC1D25FFFC70 /* Pods_PowwowChatApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFF0A7EA7D2B4CE4F77B4108 /* Pods_PowwowChatApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		029339451C96564C00EE8B97 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		02F3D20C1C950181006C77A7 /* PowwowChatApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PowwowChatApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02F3D20F1C950181006C77A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02F3D2111C950181006C77A7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -50,6 +53,7 @@
 		02F3D22F1C950181006C77A7 /* PowwowChatAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowwowChatAppUITests.swift; sourceTree = "<group>"; };
 		02F3D2311C950181006C77A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02F3D2431C960368006C77A7 /* LoginViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewControllerExtension.swift; sourceTree = "<group>"; };
+		02FE13C61C966AB4005E8DF1 /* MasterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterTableViewController.swift; sourceTree = "<group>"; };
 		7982DB2BBE0E319BCF547D44 /* Pods-PowwowChatApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PowwowChatApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-PowwowChatApp/Pods-PowwowChatApp.release.xcconfig"; sourceTree = "<group>"; };
 		DFF0A7EA7D2B4CE4F77B4108 /* Pods_PowwowChatApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PowwowChatApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF115B0AE3CC5D8459D32DE3 /* Pods-PowwowChatApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PowwowChatApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PowwowChatApp/Pods-PowwowChatApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -148,6 +152,7 @@
 				02F3D20F1C950181006C77A7 /* AppDelegate.swift */,
 				02F3D2111C950181006C77A7 /* LoginViewController.swift */,
 				02F3D2431C960368006C77A7 /* LoginViewControllerExtension.swift */,
+				02FE13C61C966AB4005E8DF1 /* MasterTableViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -171,6 +176,7 @@
 		02F3D2421C950EFC006C77A7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				029339451C96564C00EE8B97 /* User.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -369,6 +375,8 @@
 			files = (
 				02F3D2441C960368006C77A7 /* LoginViewControllerExtension.swift in Sources */,
 				02F3D2121C950181006C77A7 /* LoginViewController.swift in Sources */,
+				029339461C96564C00EE8B97 /* User.swift in Sources */,
+				02FE13C71C966AB4005E8DF1 /* MasterTableViewController.swift in Sources */,
 				02F3D2101C950181006C77A7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
