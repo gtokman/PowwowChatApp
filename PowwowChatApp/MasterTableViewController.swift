@@ -12,7 +12,7 @@ import Firebase
 class MasterTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     // MARK: Outlets
-    
+    @IBOutlet weak var tableView: UITableView?
     
     // MARK: Constants
     let firebaseRef = Firebase(url: "https://powwowchat.firebaseio.com")
