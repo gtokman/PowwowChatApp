@@ -20,6 +20,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField?
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint?
     @IBOutlet weak var appDescriptionLabel: UILabel?
+    @IBOutlet weak var constraint2: NSLayoutConstraint!
     
     // MARK: Constants
     

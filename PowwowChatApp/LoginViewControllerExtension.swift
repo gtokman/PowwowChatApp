@@ -26,7 +26,7 @@ extension LoginViewController: UITextFieldDelegate {
                 print("Could not find bottom constraint!")
                 return
             }
-            
+            constraint2.constant = 37
             bottomConstraint.constant = keyboardSize
         }
         
@@ -45,7 +45,7 @@ extension LoginViewController: UITextFieldDelegate {
             print("Could not find bottom constraint!")
             return
         }
-        
+        constraint2.constant = 57
         bottomConstraint.constant = bottomConstraintStart
         
         UIView.animateWithDuration(0.3) {
