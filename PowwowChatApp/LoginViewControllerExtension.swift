@@ -64,10 +64,27 @@ extension LoginViewController: UITextFieldDelegate {
             
             // Check user is authenticated
             if let userAuthenticated = auth {
+                
                 print("User found: \(userAuthenticated.uid)")
                 self.performSegueWithIdentifier("sendUserData", sender: auth)
             } else {
-                print("Error authenticating the user: \(error)")
+                
+                print("Error authenticating the user: \(error.code) and \(error.description)")
+                switch error.code {
+                case -5:
+                    print("Invalid email")
+                    self.newAlert.showAlert("Invalid Email", subTitle: "Please check your email", style: AlertStyle.Error)
+                case -6:
+                    print("Invalid password")
+                    self.newAlert.showAlert("Invalid Password", subTitle: "Please check your password", style: AlertStyle.Error)
+                case -15:
+                    print("Network error")
+                    self.newAlert.showAlert("Network Error", subTitle: "Please check your network connection", style: AlertStyle.Error)
+                default:
+                    print("Error with email or password")
+                    self.newAlert.showAlert("Error", subTitle: "Could not authenticate please try again", style: AlertStyle.Error)
+                }
+                
             }
             
         })
