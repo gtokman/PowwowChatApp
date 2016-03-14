@@ -8,24 +8,41 @@
 
 import UIKit
 import QuartzCore
+import Firebase
 
 class LoginViewController: UIViewController {
     
-    // Mark: Outlets
+    // MARK: Outlets
     
     @IBOutlet weak var userNameTextField: UITextField?
     @IBOutlet weak var passwordTextField: UITextField?
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint?
     @IBOutlet weak var appDescriptionLabel: UILabel?
     
+    // MARK: Constants
+    let firebaseRef = Firebase(url: "https://powwowchat.firebaseio.com")
     
-    // Mark: LoginViewController Lifecycle
+    // MARK: LoginViewController Lifecycle
     
     override func viewWillAppear(animated: Bool) {
         
     }
     
     override func viewDidAppear(animated: Bool) {
+        
+        firebaseRef.observeAuthEventWithBlock { (let auth) in
+            
+            guard auth == nil else {
+                print("No user found: \(auth.uid)")
+                return
+            }
+            
+            // User found segue
+            print("Found user while performing segue: \(auth.uid)")
+            self.performSegueWithIdentifier("sendUserData", sender: nil)
+            
+        
+        }
         
     }
     
@@ -41,20 +58,53 @@ class LoginViewController: UIViewController {
         
     }
     
-    
-    // Mark: Actions
+    // MARK: Actions
     
     @IBAction func forgotPasswordButton(sender: UIButton) {
     }
     
     @IBAction func signUpButton(sender: UIButton) {
+        
+        let alert = UIAlertController(title: "Sign up", message: "Please enter a email and password.", preferredStyle: .Alert)
+        
+        let saveUserAction = UIAlertAction(title: "Sign up", style: .Default) { (let action) in
+            
+            // Create email and password fields
+            let userEmail = alert.textFields![0]
+            let userPassword = alert.textFields![1]
+            
+            self.firebaseRef.createUser(userEmail.text, password: userPassword.text) { (error: NSError!) in
+                
+                if error == nil {
+                    
+                    // Add user 
+                    self.firebaseRef.authUser(userEmail.text, password: userPassword.text, withCompletionBlock: { (let error, let auth) in
+                        print("User added!")
+                    })
+                }
+            }
+        }
+        
+        let cancelSignUp = UIAlertAction(title: "Cancel", style: .Cancel, handler: { (let action) in
+          print("Sign up canceled")
+        })
+        
+        alert.addTextFieldWithConfigurationHandler { (userEmail) in
+            userEmail.placeholder = "Email"
+        }
+        
+        alert.addTextFieldWithConfigurationHandler { (userPassword) in
+            userPassword.placeholder = "Password"
+        }
+        
+        alert.addAction(saveUserAction)
+        alert.addAction(cancelSignUp)
+        
+        presentViewController(alert, animated: true, completion: nil)
+        
     }
     
     @IBAction func facebookButton(sender: UIButton) {
     }
-    
-    
-    
-    
 }
 

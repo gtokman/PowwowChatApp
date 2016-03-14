@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		029339441C96554300EE8B97 /* MasterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029339431C96554300EE8B97 /* MasterTableViewController.swift */; };
 		02F3D2101C950181006C77A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F3D20F1C950181006C77A7 /* AppDelegate.swift */; };
 		02F3D2121C950181006C77A7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F3D2111C950181006C77A7 /* LoginViewController.swift */; };
 		02F3D2151C950181006C77A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02F3D2131C950181006C77A7 /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		029339431C96554300EE8B97 /* MasterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterTableViewController.swift; sourceTree = "<group>"; };
 		02F3D20C1C950181006C77A7 /* PowwowChatApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PowwowChatApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02F3D20F1C950181006C77A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02F3D2111C950181006C77A7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				02F3D20F1C950181006C77A7 /* AppDelegate.swift */,
 				02F3D2111C950181006C77A7 /* LoginViewController.swift */,
 				02F3D2431C960368006C77A7 /* LoginViewControllerExtension.swift */,
+				029339431C96554300EE8B97 /* MasterTableViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -368,6 +371,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				02F3D2441C960368006C77A7 /* LoginViewControllerExtension.swift in Sources */,
+				029339441C96554300EE8B97 /* MasterTableViewController.swift in Sources */,
 				02F3D2121C950181006C77A7 /* LoginViewController.swift in Sources */,
 				02F3D2101C950181006C77A7 /* AppDelegate.swift in Sources */,
 			);

@@ -35,14 +35,6 @@ extension LoginViewController: UITextFieldDelegate {
         }
     }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-       
-        userNameTextField!.resignFirstResponder()
-        passwordTextField!.becomeFirstResponder()
-        
-        return true
-    }
-    
     func keyboardWillHide(notification: NSNotification) {
         
         appDescriptionLabel?.hidden = false
@@ -59,5 +51,26 @@ extension LoginViewController: UITextFieldDelegate {
         UIView.animateWithDuration(0.3) {
             self.view.layoutIfNeeded()
         }
+    }
+    
+    // MARK: UITextFieldDelegate
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        
+        userNameTextField?.resignFirstResponder()
+        passwordTextField?.becomeFirstResponder()
+        
+        firebaseRef.authUser(userNameTextField?.text, password: passwordTextField?.text, withCompletionBlock: { (let error, let auth) in
+            
+            // Check user is authenticated
+            if let userAuthenticated = auth {
+                print("User found: \(userAuthenticated.uid)")
+            } else {
+                print("Error authenticating the user: \(error)")
+            }
+            
+        })
+        
+        return true
     }
 }
