@@ -9,6 +9,8 @@
 import UIKit
 import QuartzCore
 import Firebase
+import FBSDKCoreKit
+import FBSDKLoginKit
 
 class LoginViewController: UIViewController {
     
@@ -92,6 +94,40 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func facebookButton(sender: UIButton) {
+        
+        let facebookLogin = FBSDKLoginManager()
+        print("Logging into Facebook")
+        
+        facebookLogin.logInWithReadPermissions(["email"], fromViewController: self, handler: { (let result, let error) in
+            
+            guard error == nil else {
+                print("Error logging in to facebook: \(error)")
+                return
+            }
+            
+            // Success
+            print("User logged in with Facebook successfly: \(result.description)")
+            
+            let accessToken = FBSDKAccessToken.currentAccessToken().tokenString
+            
+            self.firebaseRef.authWithOAuthProvider("facebook", token: accessToken, withCompletionBlock: { (let error, let auth) in
+                
+                // Check user is authenticated
+                if let userAuthenticated = auth {
+                    print("User found: \(userAuthenticated.uid)")
+                    self.performSegueWithIdentifier("sendUserData", sender: auth)
+                } else {
+                    print("Error authenticating the user: \(error)")
+                }
+            
+            })
+            
+        
+        })
+        
+        
+        
+        
     }
 }
 
