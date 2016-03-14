@@ -203,7 +203,6 @@ class LoginViewController: UIViewController {
                 if let userAuthenticated = auth {
                     
                     print("User found: \(userAuthenticated.uid)")
-                    self.newAlert.showAlert("Success", subTitle: "Logged in with Facebook", style: AlertStyle.Success)
                     self.performSegueWithIdentifier("sendUserData", sender: auth)
                     
                 } else {
