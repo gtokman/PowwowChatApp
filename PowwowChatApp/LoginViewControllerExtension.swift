@@ -65,6 +65,7 @@ extension LoginViewController: UITextFieldDelegate {
             // Check user is authenticated
             if let userAuthenticated = auth {
                 print("User found: \(userAuthenticated.uid)")
+                self.performSegueWithIdentifier("sendUserData", sender: auth)
             } else {
                 print("Error authenticating the user: \(error)")
             }

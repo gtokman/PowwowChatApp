@@ -30,19 +30,6 @@ class LoginViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         
-        firebaseRef.observeAuthEventWithBlock { (let auth) in
-            
-            guard auth == nil else {
-                print("No user found: \(auth.uid)")
-                return
-            }
-            
-            // User found segue
-            print("Found user while performing segue: \(auth.uid)")
-            self.performSegueWithIdentifier("sendUserData", sender: nil)
-            
-        
-        }
         
     }
     
