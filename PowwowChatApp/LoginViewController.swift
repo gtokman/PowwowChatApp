@@ -38,7 +38,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Adjust bottom constraint 
+        // Adjust bottom constraint
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name:UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name:UIKeyboardWillHideNotification, object: nil)
         
@@ -50,6 +50,42 @@ class LoginViewController: UIViewController {
     // MARK: Actions
     
     @IBAction func forgotPasswordButton(sender: UIButton) {
+        
+        let alert = UIAlertController(title: "Reset Password", message: "Please enter your email address.", preferredStyle: .Alert)
+        
+        let sendEmail = UIAlertAction(title: "Send", style: .Default) { (let action) in
+            
+            let userEmail = alert.textFields![0]
+            
+            self.firebaseRef.resetPasswordForUser(userEmail.text, withCompletionBlock: { (error: NSError!) in
+                
+                if error == nil {
+                    // Success
+                    print("Email sent to user!")
+                    
+                } else {
+                    print("Email did not send to user!")
+                }
+                
+            })
+            
+        }
+        
+        let cancelButton = UIAlertAction(title: "Cancel", style: .Cancel) { (let action) in
+            print("User canceled")
+        }
+        
+        alert.addTextFieldWithConfigurationHandler { (let userEmail) in
+            userEmail.placeholder = "Email"
+        }
+        
+        alert.addAction(sendEmail)
+        alert.addAction(cancelButton)
+        
+        presentViewController(alert, animated: true, completion: nil)
+        
+        
+        
     }
     
     @IBAction func signUpButton(sender: UIButton) {
@@ -66,7 +102,7 @@ class LoginViewController: UIViewController {
                 
                 if error == nil {
                     
-                    // Add user 
+                    // Add user
                     self.firebaseRef.authUser(userEmail.text, password: userPassword.text, withCompletionBlock: { (let error, let auth) in
                         print("User added!")
                     })
@@ -75,7 +111,7 @@ class LoginViewController: UIViewController {
         }
         
         let cancelSignUp = UIAlertAction(title: "Cancel", style: .Cancel, handler: { (let action) in
-          print("Sign up canceled")
+            print("Sign up canceled")
         })
         
         alert.addTextFieldWithConfigurationHandler { (userEmail) in
@@ -119,10 +155,10 @@ class LoginViewController: UIViewController {
                 } else {
                     print("Error authenticating the user: \(error)")
                 }
-            
+                
             })
             
-        
+            
         })
         
         
