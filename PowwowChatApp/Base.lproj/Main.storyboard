@@ -24,7 +24,7 @@
                                 </constraints>
                                 <color key="textColor" red="0.79607843137254897" green="0.45882352941176469" blue="0.45882352941176469" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardAppearance="light" returnKeyType="next"/>
+                                <textInputTraits key="textInputTraits" keyboardAppearance="light" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Password" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="zP2-0G-Mpz">
                                 <rect key="frame" x="0.0" y="448" width="600" height="35"/>
@@ -136,7 +136,7 @@
                             <constraint firstItem="zP2-0G-Mpz" firstAttribute="height" secondItem="keR-Dv-Ndi" secondAttribute="height" id="pgf-Em-Xjf"/>
                             <constraint firstItem="caq-P2-Myl" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="sHj-vl-Agh"/>
                             <constraint firstItem="caq-P2-Myl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="th5-kt-glx"/>
-                            <constraint firstItem="keR-Dv-Ndi" firstAttribute="top" secondItem="R85-wR-RwW" secondAttribute="bottom" constant="57" id="uLV-CY-FBx"/>
+                            <constraint firstItem="keR-Dv-Ndi" firstAttribute="top" secondItem="R85-wR-RwW" secondAttribute="bottom" constant="57" id="thF-he-RVd"/>
                             <constraint firstItem="jjF-Qj-FbV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ugW-EO-yVj"/>
                             <constraint firstItem="caq-P2-Myl" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="267" id="vhc-GY-1eC"/>
                         </constraints>
@@ -156,6 +156,7 @@
                     <connections>
                         <outlet property="appDescriptionLabel" destination="R85-wR-RwW" id="jkQ-n9-7wx"/>
                         <outlet property="bottomConstraint" destination="LAt-H5-DWT" id="enO-XD-43o"/>
+                        <outlet property="constraint2" destination="thF-he-RVd" id="zvj-UK-GZN"/>
                         <outlet property="passwordTextField" destination="zP2-0G-Mpz" id="Qw5-7Y-mYZ"/>
                         <outlet property="userNameTextField" destination="keR-Dv-Ndi" id="cbC-gh-v31"/>
                         <segue destination="4C9-pm-cRa" kind="show" identifier="sendUserData" id="wPc-xn-scY"/>
