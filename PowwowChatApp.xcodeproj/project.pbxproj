@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		027D27721C99C80800DBD08B /* GCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027D27711C99C80800DBD08B /* GCD.swift */; };
+		027D27741C99D46D00DBD08B /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027D27731C99D46D00DBD08B /* Helper.swift */; };
 		029339461C96564C00EE8B97 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029339451C96564C00EE8B97 /* User.swift */; };
 		0295A8401C9727ED00BAF5A0 /* SweetAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0295A83F1C9727ED00BAF5A0 /* SweetAlert.swift */; };
 		02F3D2101C950181006C77A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F3D20F1C950181006C77A7 /* AppDelegate.swift */; };
@@ -39,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		027D27711C99C80800DBD08B /* GCD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCD.swift; sourceTree = "<group>"; };
+		027D27731C99D46D00DBD08B /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		029339451C96564C00EE8B97 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0295A83F1C9727ED00BAF5A0 /* SweetAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SweetAlert.swift; sourceTree = "<group>"; };
 		02F3D20C1C950181006C77A7 /* PowwowChatApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PowwowChatApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -172,6 +176,8 @@
 			isa = PBXGroup;
 			children = (
 				02F3D21B1C950181006C77A7 /* Info.plist */,
+				027D27711C99C80800DBD08B /* GCD.swift */,
+				027D27731C99D46D00DBD08B /* Helper.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -376,12 +382,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				027D27721C99C80800DBD08B /* GCD.swift in Sources */,
 				02F3D2441C960368006C77A7 /* LoginViewControllerExtension.swift in Sources */,
 				02F3D2121C950181006C77A7 /* LoginViewController.swift in Sources */,
 				029339461C96564C00EE8B97 /* User.swift in Sources */,
 				02FE13C71C966AB4005E8DF1 /* MasterTableViewController.swift in Sources */,
 				02F3D2101C950181006C77A7 /* AppDelegate.swift in Sources */,
 				0295A8401C9727ED00BAF5A0 /* SweetAlert.swift in Sources */,
+				027D27741C99D46D00DBD08B /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
