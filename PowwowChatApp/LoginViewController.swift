@@ -110,74 +110,15 @@ class LoginViewController: UIViewController {
     
     @IBAction func signUpButton(sender: UIButton) {
         
-        let alert = UIAlertController(title: "Sign up", message: "Please enter a email and password.", preferredStyle: .Alert)
-        let subview = alert.view.subviews.first! as UIView
-        let alertView = subview.subviews.first! as UIView
-        alertView.backgroundColor = UIColor.whiteColor()
-        alertView.layer.cornerRadius = 0
-        alert.view.tintColor = UIColor.redColor()
-        
-        let saveUserAction = UIAlertAction(title: "Sign up", style: .Default) { (let action) in
+        do {
             
-            // Create email and password fields
-            let userEmail = alert.textFields![0]
-            let userPassword = alert.textFields![1]
+       let alert = try createAlertController(alertMessage: "Sign up please", alertTitle: "Sign Up")
+            presentViewController(alert, animated: true, completion: nil)
             
-            self.firebaseRef.createUser(userEmail.text, password: userPassword.text) { (error: NSError!) in
-                
-                if error == nil {
-                    
-                    if userPassword.text?.characters.count >= 5 {
-                        // Add user
-                        self.firebaseRef.authUser(userEmail.text, password: userPassword.text, withCompletionBlock: { (let error, let auth) in
-                            print("User added!")
-                            self.newAlert.showAlert("Success", subTitle: "Account created", style: AlertStyle.Success)
-                        })
-                        
-                    } else {
-                        
-                        self.newAlert.showAlert("Password is to short")
-                        
-                    }
-                } else {
-                    print("error \(error.code) and \(error.description)")
-                    
-                    // Handle error
-                    switch error.code {
-                    case -8:
-                        print("Invalid User")
-                        self.newAlert.showAlert("Invalid User", subTitle: "User does not exist", style: AlertStyle.Error)
-                    case -5:
-                        print("Invalid email")
-                        self.newAlert.showAlert("Invalid Email", subTitle: "Email is not valid", style: AlertStyle.Error)
-                    case -9:
-                        print("email taken")
-                        self.newAlert.showAlert("Email Taken", subTitle: "The email address is already used.", style: AlertStyle.Error)
-                    default:
-                        self.newAlert.showAlert("Network Error", subTitle: "Please check your internet connection and try agian", style: AlertStyle.Error)
-                    }
-                    
-                }
-                
-            }
+        } catch {
+            print("faild with error: \(error)")
         }
-        
-        let cancelSignUp = UIAlertAction(title: "Cancel", style: .Cancel, handler: { (let action) in
-            print("Sign up canceled")
-        })
-        
-        alert.addTextFieldWithConfigurationHandler { (userEmail) in
-            userEmail.placeholder = "Email"
-        }
-        
-        alert.addTextFieldWithConfigurationHandler { (userPassword) in
-            userPassword.placeholder = "Password"
-        }
-        
-        alert.addAction(saveUserAction)
-        alert.addAction(cancelSignUp)
-        
-        presentViewController(alert, animated: true, completion: nil)
+       // presentViewController(alert, animated: true, completion: nil)
         
     }
     
