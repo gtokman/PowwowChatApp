@@ -49,7 +49,7 @@ class LoginViewController: UIViewController {
         passwordTextField?.delegate = self
         
     }
-   
+    
     // MARK: Actions
     
     @IBAction func forgotPasswordButton(sender: UIButton) {
@@ -60,7 +60,7 @@ class LoginViewController: UIViewController {
         alertView.backgroundColor = UIColor.whiteColor()
         alertView.layer.cornerRadius = 0
         alert.view.tintColor = UIColor.redColor()
-    
+        
         let sendEmail = UIAlertAction(title: "Send", style: .Default) { (let action) in
             
             let userEmail = alert.textFields![0]
@@ -84,7 +84,7 @@ class LoginViewController: UIViewController {
                         print("Invalid email")
                         self.newAlert.showAlert("Invalid Email", subTitle: "Email is not valid", style: AlertStyle.Error)
                     default:
-                       self.newAlert.showAlert("Network Error", subTitle: "Please check your internet connection and try agian", style: AlertStyle.Error)
+                        self.newAlert.showAlert("Network Error", subTitle: "Please check your internet connection and try agian", style: AlertStyle.Error)
                     }
                     
                 }
@@ -128,11 +128,11 @@ class LoginViewController: UIViewController {
                 if error == nil {
                     
                     if userPassword.text?.characters.count >= 5 {
-                    // Add user
-                    self.firebaseRef.authUser(userEmail.text, password: userPassword.text, withCompletionBlock: { (let error, let auth) in
-                        print("User added!")
-                        self.newAlert.showAlert("Success", subTitle: "Account created", style: AlertStyle.Success)
-                    })
+                        // Add user
+                        self.firebaseRef.authUser(userEmail.text, password: userPassword.text, withCompletionBlock: { (let error, let auth) in
+                            print("User added!")
+                            self.newAlert.showAlert("Success", subTitle: "Account created", style: AlertStyle.Success)
+                        })
                         
                     } else {
                         
@@ -193,22 +193,28 @@ class LoginViewController: UIViewController {
                 return
             }
             
-            // Success
-            print("User logged in with Facebook successfly: \(result.description)")
+            print("User logging in with Facebook: \(result.description)")
             
-            let accessToken = FBSDKAccessToken.currentAccessToken().tokenString
+            /*
+                GUARD invalid access token
+            */
+            guard let accessToken = FBSDKAccessToken.currentAccessToken() else {
+                print("access token is not found: user canceled login: \(result.description)")
+                return
+            }
             
-            self.firebaseRef.authWithOAuthProvider("facebook", token: accessToken, withCompletionBlock: { (let error, let auth) in
+            self.firebaseRef.authWithOAuthProvider("facebook", token: accessToken.tokenString, withCompletionBlock: { (let error, let auth) in
                 
                 // Check user is authenticated
                 if let userAuthenticated = auth {
                     
                     print("User found: \(userAuthenticated.uid)")
+                    self.newAlert.showAlert("Success", subTitle: "Logged in with Facebook", style: AlertStyle.Success)
                     self.performSegueWithIdentifier("sendUserData", sender: auth)
                     
                 } else {
                     
-                    print("Error authenticating the user: \(error)")
+                    print("Error authenticating the user: \(error.code)")
                     self.newAlert.showAlert("Error", subTitle: "Please try again, authentication failed", style: AlertStyle.Error)
                     
                 }
