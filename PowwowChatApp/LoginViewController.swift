@@ -42,8 +42,8 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         // Adjust bottom constraint
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name:UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name:UIKeyboardWillHideNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
         
         userNameTextField?.delegate = self
         passwordTextField?.delegate = self
@@ -131,7 +131,9 @@ class LoginViewController: UIViewController {
             
             guard error == nil else {
                 print("Error logging in to facebook: \(error)")
+                
                 return
+                
             }
             
             print("User logging in with Facebook: \(result.description)")
@@ -141,7 +143,9 @@ class LoginViewController: UIViewController {
             */
             guard let accessToken = FBSDKAccessToken.currentAccessToken() else {
                 print("access token is not found: user canceled login: \(result.description)")
+                
                 return
+                
             }
             
             self.firebaseRef.authWithOAuthProvider("facebook", token: accessToken.tokenString, withCompletionBlock: { (let error, let auth) in
@@ -166,5 +170,3 @@ class LoginViewController: UIViewController {
         
     }
 }
-
-

@@ -27,7 +27,9 @@ class MasterTableViewController: UIViewController, UITableViewDelegate, UITableV
             
             guard auth != nil else {
                 print("User did not segue to table: \(auth.uid)")
+                
                 return
+                
             }
             
             // Success
@@ -52,21 +54,26 @@ class MasterTableViewController: UIViewController, UITableViewDelegate, UITableV
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
+        
         return 1
+        
     }
     
      func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        
         return 1
+        
     }
-    
     
      func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("userMessages", forIndexPath: indexPath)
         
         // Configure the cell...
         cell.textLabel?.text = "Hello"
+        
         return cell
+        
     }
     
     // MARK: Actions
@@ -80,5 +87,3 @@ class MasterTableViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
 }
-
-

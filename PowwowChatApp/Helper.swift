@@ -40,7 +40,9 @@ func createAlertController( alertMessage message: String, alertTitle title: Stri
         guard userPassword?.characters.count > 0 && userPassword?.characters.count >= 5 else {
             print("Enter a password that is valid")
             newAlert.showAlert("Enter a valid password")
+            
             return
+            
         }
         
         /*Create the user*/
@@ -53,7 +55,9 @@ func createAlertController( alertMessage message: String, alertTitle title: Stri
                 } catch {
                     print("asdffas\(error)")
                 }
+                
                 return
+                
             }
             
             /*Add user*/
@@ -86,7 +90,7 @@ func createAlertController( alertMessage message: String, alertTitle title: Stri
     return alert
 }
 
-func userErrors (error: NSError!) throws -> String {
+func userErrors(error: NSError!) throws -> String {
    
     switch error.code {
     case User.Error.InvalidPassword.rawValue:
@@ -108,7 +112,3 @@ func userErrors (error: NSError!) throws -> String {
     return "\(error.code)"
     
 }
-
-
-
-

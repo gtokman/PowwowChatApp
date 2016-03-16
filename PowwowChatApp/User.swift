@@ -44,4 +44,3 @@ extension User {
         email = auth.providerData["email"] as! String
     }
 }
-

@@ -8,10 +8,10 @@
 
 import Foundation
 
-typealias update = () -> Void
+typealias Update = () -> Void
 
-/** Perform UI updates on main */
-func performUIUpdatesOnMain(updates: update) {
+/** Perform updates on Main */
+func performUIUpdatesOnMain(updates: Update) {
     dispatch_async(dispatch_get_main_queue()) {
         updates()
     }
