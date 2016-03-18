@@ -18,7 +18,7 @@ extension LoginViewController: UITextFieldDelegate {
     
     func keyboardWillShow(notification: NSNotification) {
         
-        appDescriptionLabel?.hidden = true
+      
         
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue().height {
             
@@ -28,7 +28,7 @@ extension LoginViewController: UITextFieldDelegate {
                 return
                 
             }
-            constraint2.constant = 37
+           
             bottomConstraint.constant = keyboardSize
         }
         
@@ -39,9 +39,7 @@ extension LoginViewController: UITextFieldDelegate {
     
     func keyboardWillHide(notification: NSNotification) {
         
-        appDescriptionLabel?.hidden = false
-        
-        let bottomConstraintStart: CGFloat = 51
+        let bottomConstraintStart: CGFloat = 150
         
         guard let bottomConstraint = bottomConstraint else {
             print("Could not find bottom constraint!")
@@ -49,7 +47,7 @@ extension LoginViewController: UITextFieldDelegate {
             return
             
         }
-        constraint2.constant = 57
+       
         bottomConstraint.constant = bottomConstraintStart
         
         UIView.animateWithDuration(0.3) {

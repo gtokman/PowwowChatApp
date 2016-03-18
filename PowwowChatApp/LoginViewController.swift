@@ -19,9 +19,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var userNameTextField: UITextField?
     @IBOutlet weak var passwordTextField: UITextField?
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint?
-    @IBOutlet weak var appDescriptionLabel: UILabel?
-    @IBOutlet weak var constraint2: NSLayoutConstraint!
-    
+ 
     // MARK: Constants
     
     var newAlert = SweetAlert()
@@ -110,15 +108,8 @@ class LoginViewController: UIViewController {
     
     @IBAction func signUpButton(sender: UIButton) {
         
-        do {
-            
-       let alert = try createAlertController(alertMessage: "Sign up please", alertTitle: "Sign Up")
-            presentViewController(alert, animated: true, completion: nil)
-            
-        } catch {
-            print("faild with error: \(error)")
-        }
-       // presentViewController(alert, animated: true, completion: nil)
+        let alert =  createAlertController(alertMessage: "Sign up please", alertTitle: "Sign Up")
+        presentViewController(alert, animated: true, completion: nil)
         
     }
     
@@ -139,7 +130,7 @@ class LoginViewController: UIViewController {
             print("User logging in with Facebook: \(result.description)")
             
             /*
-                GUARD invalid access token
+            GUARD invalid access token
             */
             guard let accessToken = FBSDKAccessToken.currentAccessToken() else {
                 print("access token is not found: user canceled login: \(result.description)")
