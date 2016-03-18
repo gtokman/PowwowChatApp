@@ -11,7 +11,7 @@ import UIKit
 typealias CreatedUserCompletion = () -> Void
 
 /** Create alert */
-func createAlertController(alertMessage message: String, alertTitle title: String) -> UIAlertController  {
+func createAlertController(alertMessage message: String, alertTitle title: String, actionTitle actionTitl: String, resetPassword reset: Bool) -> UIAlertController  {
     
     let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
     
@@ -23,7 +23,7 @@ func createAlertController(alertMessage message: String, alertTitle title: Strin
     alertView.layer.cornerRadius = 0
     
     // Create alert action
-    let saveAction = alertUserAction(actionTitle: "Sign up", alertController: alert)
+    let saveAction = alertUserAction(actionTitle: actionTitl, alertController: alert, resetUserPassword: reset)
     
     // Cancel
     let cancelSignUp = UIAlertAction(title: "Cancel", style: .Cancel, handler: { (let action) in
@@ -68,14 +68,22 @@ func userErrors(error: NSError!) throws -> String {
     
 }
 
-// TODO: Add errors for textfields
+// TODO: Catch errors for textfields
 /** Create sign up fields */
-func createSignUpFields(signUpAlert alert: UIAlertController) throws -> (email: String?, password: String?) {
+func createSignUpFields(signUpAlert alert: UIAlertController, resetPassword reset: Bool) throws -> (email: String?, password: String?) {
     
     /*Text fields*/
     guard let textField = alert.textFields else {
         print("")
         throw User.Error.InvalidPassword
+    }
+    
+    // If reseting password
+    if reset {
+        let userEmail = textField.first?.text
+        
+        return (userEmail, nil)
+        
     }
     
     guard let textField2 = alert.textFields else {
@@ -88,38 +96,72 @@ func createSignUpFields(signUpAlert alert: UIAlertController) throws -> (email: 
     
     guard userPassword?.characters.count > 0 && userPassword?.characters.count >= 5 else {
         print("Enter a password that is valid")
-        newAlert.showAlert("Enter a valid password")
         
         print("")
         throw User.Error.InvalidPassword
         
     }
     
+    print("good")
+    
     return (userEmail, userPassword)
     
 }
 
 /** Add action to alert controller */
-func alertUserAction(actionTitle title: String, alertController alert: UIAlertController) -> UIAlertAction {
+func alertUserAction(actionTitle title: String, alertController alert: UIAlertController, resetUserPassword reset: Bool) -> UIAlertAction {
     
     /*Save user action*/
-    let saveAction = UIAlertAction(title: title, style: .Default) { (action) in
+    let action = UIAlertAction(title: title, style: .Default) { (action) in
         
         do {
-            
             // Create user
-            let userSignUp = try createSignUpFields(signUpAlert: alert)
+            let userSignUp = try createSignUpFields(signUpAlert: alert, resetPassword: reset)
             
-            // Auth
-            createUser(userEmail: userSignUp.email, userPassword: userSignUp.password)
+            if reset {
+                // Reset password
+                userForgotPassword(userEmail: userSignUp.email)
+            } else {
+                // Auth
+                createUser(userEmail: userSignUp.email, userPassword: userSignUp.password)
+            }
+        } catch User.Error.TextFieldNotFound {
+            print("Textfield is not found")
+        } catch User.Error.InvalidPassword {
+            newAlert.showAlert("Enter a valid password")
         } catch {
-            print(error)
+            print("Failed to reset/create user: \(error)")
         }
         
     }
     
-    return saveAction
+    return action
     
+}
+
+/** Reset the users password */
+func userForgotPassword(userEmail email: String?) {
+    
+    firebaseRef.resetPasswordForUser(email) { (error: NSError!) in
+        guard error == nil else {
+            do {
+                try userErrors(error)
+            } catch User.Error.InvalidEmail {
+                newAlert.showAlert("Invalid email", subTitle: "Please chech the email and try again", style: .Error)
+            } catch User.Error.InvalidUser {
+                newAlert.showAlert("Invalid user", subTitle: "User does not exist", style: .Error)
+            } catch {
+                print("Error reseting the password: \(error)")
+            }
+            
+            return
+            
+        }
+        
+        // Email Sent to user
+        print("Reset email sent!")
+        SweetAlert().showAlert("Success", subTitle: "Email sent successfully", style: AlertStyle.Success)
+    }
 }
 
 /** Create Firebase user */
@@ -136,7 +178,7 @@ func createUser(userEmail email: String?, userPassword password: String?) {
             } catch User.Error.InvalidPassword {
                 newAlert.showAlert("Invalid password", subTitle: "Password does not match", style: .Error)
             } catch User.Error.InvalidEmail {
-                newAlert.showAlert("Invalid email", subTitle: "Please chech the email and try again", style: .Error)
+                newAlert.showAlert("Invalid email", subTitle: "Please check the email and try again", style: .Error)
             } catch User.Error.InvalidUser {
                 newAlert.showAlert("Invalid user", subTitle: "User does not exist", style: .Error)
             } catch User.Error.EmailTaken {

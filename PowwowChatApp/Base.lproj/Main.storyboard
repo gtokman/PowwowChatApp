@@ -73,7 +73,7 @@
                                 </constraints>
                                 <color key="textColor" red="0.79607843137254897" green="0.45882352941176469" blue="0.45882352941176469" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardAppearance="light" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                <textInputTraits key="textInputTraits" keyboardAppearance="light" enablesReturnKeyAutomatically="YES"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="6ax-VU-wXm"/>
@@ -179,7 +179,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="userMessages" textLabel="4dd-CE-E2j" rowHeight="53" style="IBUITableViewCellStyleDefault" id="C1M-Yt-NKv">
-                                        <rect key="frame" x="0.0" y="92" width="600" height="53"/>
+                                        <rect key="frame" x="0.0" y="28" width="600" height="53"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="C1M-Yt-NKv" id="vJf-5W-h2w">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="52.5"/>
