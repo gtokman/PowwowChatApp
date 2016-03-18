@@ -16,11 +16,12 @@ struct User {
     // Hand Error
   
     enum Error: Int, ErrorType {
-        case InvalidPassword = -6
-        case InvalidUser = -8
-        case InvalidEmail = -5
-        case NetworkError = -15
-        case EmailTaken = -9
+        case InvalidPassword 
+        case InvalidUser
+        case InvalidEmail
+        case NetworkError
+        case EmailTaken
+        case TextFieldNotFound
         
     }
     
