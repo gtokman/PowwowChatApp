@@ -248,6 +248,7 @@
 				02F3D20A1C950181006C77A7 /* Resources */,
 				C126F49E4B7B0DE83CE8A487 /* Embed Pods Frameworks */,
 				8D2C8F230B03CE51E701DA2A /* Copy Pods Resources */,
+				02BE3AD01C9DF6A300DB51CC /* Build Number Script */,
 			);
 			buildRules = (
 			);
@@ -366,6 +367,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		02BE3AD01C9DF6A300DB51CC /* Build Number Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Build Number Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#Update build number with number of git commits if in release mode\nif [ ${CONFIGURATION} == \"Release\" ]; then\nbuildNumber=$(git rev-list HEAD | wc -l | tr -d ' ')\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\nfi;";
+		};
 		8D2C8F230B03CE51E701DA2A /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
