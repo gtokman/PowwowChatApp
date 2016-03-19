@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0205AA1C1C9C886900DA3C90 /* CircleMenuNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0205AA1B1C9C886900DA3C90 /* CircleMenuNavigation.swift */; };
 		027D27721C99C80800DBD08B /* GCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027D27711C99C80800DBD08B /* GCD.swift */; };
 		027D27741C99D46D00DBD08B /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027D27731C99D46D00DBD08B /* Helper.swift */; };
 		029339461C96564C00EE8B97 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029339451C96564C00EE8B97 /* User.swift */; };
 		0295A8401C9727ED00BAF5A0 /* SweetAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0295A83F1C9727ED00BAF5A0 /* SweetAlert.swift */; };
+		02BE3AC81C9DA66400DB51CC /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BE3AC71C9DA66400DB51CC /* SearchViewController.swift */; };
+		02BE3ACA1C9DA68600DB51CC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BE3AC91C9DA68600DB51CC /* ProfileViewController.swift */; };
 		02F3D2101C950181006C77A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F3D20F1C950181006C77A7 /* AppDelegate.swift */; };
 		02F3D2121C950181006C77A7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F3D2111C950181006C77A7 /* LoginViewController.swift */; };
 		02F3D2151C950181006C77A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02F3D2131C950181006C77A7 /* Main.storyboard */; };
@@ -41,10 +44,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0205AA1B1C9C886900DA3C90 /* CircleMenuNavigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleMenuNavigation.swift; sourceTree = "<group>"; };
 		027D27711C99C80800DBD08B /* GCD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCD.swift; sourceTree = "<group>"; };
 		027D27731C99D46D00DBD08B /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		029339451C96564C00EE8B97 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0295A83F1C9727ED00BAF5A0 /* SweetAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SweetAlert.swift; sourceTree = "<group>"; };
+		02BE3AC71C9DA66400DB51CC /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		02BE3AC91C9DA68600DB51CC /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		02F3D20C1C950181006C77A7 /* PowwowChatApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PowwowChatApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02F3D20F1C950181006C77A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02F3D2111C950181006C77A7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +97,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		02BE3ACB1C9DA69700DB51CC /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				02F3D2111C950181006C77A7 /* LoginViewController.swift */,
+				02F3D2431C960368006C77A7 /* LoginViewControllerExtension.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		02BE3ACC1C9DA6A800DB51CC /* Table view */ = {
+			isa = PBXGroup;
+			children = (
+				02FE13C61C966AB4005E8DF1 /* MasterTableViewController.swift */,
+			);
+			name = "Table view";
+			sourceTree = "<group>";
+		};
+		02BE3ACD1C9DA6B600DB51CC /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				0205AA1B1C9C886900DA3C90 /* CircleMenuNavigation.swift */,
+				02BE3AC71C9DA66400DB51CC /* SearchViewController.swift */,
+				02BE3AC91C9DA68600DB51CC /* ProfileViewController.swift */,
+			);
+			name = Navigation;
+			sourceTree = "<group>";
+		};
 		02F3D2031C950181006C77A7 = {
 			isa = PBXGroup;
 			children = (
@@ -156,9 +189,9 @@
 			isa = PBXGroup;
 			children = (
 				02F3D20F1C950181006C77A7 /* AppDelegate.swift */,
-				02F3D2111C950181006C77A7 /* LoginViewController.swift */,
-				02F3D2431C960368006C77A7 /* LoginViewControllerExtension.swift */,
-				02FE13C61C966AB4005E8DF1 /* MasterTableViewController.swift */,
+				02BE3ACC1C9DA6A800DB51CC /* Table view */,
+				02BE3ACB1C9DA69700DB51CC /* Login */,
+				02BE3ACD1C9DA6B600DB51CC /* Navigation */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -382,10 +415,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02BE3AC81C9DA66400DB51CC /* SearchViewController.swift in Sources */,
 				027D27721C99C80800DBD08B /* GCD.swift in Sources */,
 				02F3D2441C960368006C77A7 /* LoginViewControllerExtension.swift in Sources */,
+				0205AA1C1C9C886900DA3C90 /* CircleMenuNavigation.swift in Sources */,
 				02F3D2121C950181006C77A7 /* LoginViewController.swift in Sources */,
 				029339461C96564C00EE8B97 /* User.swift in Sources */,
+				02BE3ACA1C9DA68600DB51CC /* ProfileViewController.swift in Sources */,
 				02FE13C71C966AB4005E8DF1 /* MasterTableViewController.swift in Sources */,
 				02F3D2101C950181006C77A7 /* AppDelegate.swift in Sources */,
 				0295A8401C9727ED00BAF5A0 /* SweetAlert.swift in Sources */,
@@ -532,6 +568,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = PowwowChatApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.garytokman.PowwowChatApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -546,6 +583,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				INFOPLIST_FILE = PowwowChatApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.garytokman.PowwowChatApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";

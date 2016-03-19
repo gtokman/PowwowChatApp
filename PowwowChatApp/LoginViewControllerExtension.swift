@@ -20,8 +20,6 @@ extension LoginViewController: UITextFieldDelegate {
     
     func keyboardWillShow(notification: NSNotification) {
         
-        
-        
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue().height {
             
             guard let bottomConstraint = bottomConstraint else {
@@ -67,7 +65,6 @@ extension LoginViewController: UITextFieldDelegate {
         return true
     }
     
-    
     /** Log user into Powwow */
     func userLogin() {
         
@@ -107,7 +104,7 @@ extension LoginViewController: UITextFieldDelegate {
         let facebookLogin = FBSDKLoginManager()
         print("Logging into Facebook")
         
-        facebookLogin.logInWithReadPermissions(["email"], fromViewController: self, handler: { (let result, let error) in
+        facebookLogin.logInWithReadPermissions(["email","user_friends","public_profile", "user_photos"], fromViewController: self, handler: { (let result, let error) in
             
             guard error == nil else {
                 print("Error logging in to facebook: \(error)")
@@ -155,17 +152,3 @@ extension LoginViewController: UITextFieldDelegate {
     }
    
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

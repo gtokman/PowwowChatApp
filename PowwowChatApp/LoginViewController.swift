@@ -19,14 +19,14 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var userNameTextField: UITextField?
     @IBOutlet weak var passwordTextField: UITextField?
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint?
- 
+    
     // MARK: Constants
     
     var newAlert = SweetAlert()
     let firebaseRef = Firebase(url: "https://powwowchat.firebaseio.com")
     
     // MARK: LoginViewController Lifecycle
- 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,11 +39,14 @@ class LoginViewController: UIViewController {
         
     }
     
+    
+    
     // MARK: Actions
     
     @IBAction func forgotPasswordButton(sender: UIButton) {
         
         let alert = createAlertController(alertMessage: "Please enter your email", alertTitle: "Reset Password", actionTitle: "Send", resetPassword: true)
+        alert.textFields?.last?.hidden = true
         
         presentViewController(alert, animated: true, completion: nil)
         
@@ -58,7 +61,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func facebookButton(sender: UIButton) {
         
-       signInWithFacebook()
+        signInWithFacebook()
         
     }
     

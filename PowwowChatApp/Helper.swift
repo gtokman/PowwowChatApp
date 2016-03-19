@@ -75,20 +75,21 @@ func createSignUpFields(signUpAlert alert: UIAlertController, resetPassword rese
     /*Text fields*/
     guard let textField = alert.textFields else {
         print("")
-        throw User.Error.InvalidPassword
-    }
-    
-    // If reseting password
-    if reset {
-        let userEmail = textField.first?.text
-        
-        return (userEmail, nil)
-        
+        throw User.Error.TextFieldNotFound
     }
     
     guard let textField2 = alert.textFields else {
         print("")
-        throw User.Error.InvalidPassword
+        throw User.Error.TextFieldNotFound
+    }
+    
+    // If reseting password
+    if reset {
+        
+        let userEmail = textField.first?.text
+        
+        return (userEmail, nil)
+        
     }
     
     let userEmail = textField.first?.text
