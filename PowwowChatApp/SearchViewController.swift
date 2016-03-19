@@ -14,9 +14,19 @@ class SearchViewController: UIViewController, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView?
     
+    // MARK: Constants
+    
+    let searchController = UISearchController(searchResultsController: nil)
+    var filteredUsers = [User]()
+    var users = [User]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        let user1 = User(uid: "dfsa", email: "g.tok138")
+        let user2 = User(uid: "dfsad", email: "bok138")
+        users += [user1, user2]
+        searchDesignProperties()
         // Do any additional setup after loading the view.
     }
 
