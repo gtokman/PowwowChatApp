@@ -23,6 +23,7 @@ extension MasterTableViewController: CircleMenuDelegate {
         buttons += [searchButton, cancelButton, profileButton]
         
         button.setImage(buttons[atIndex], forState: .Normal)
+        button.tintColor = UIColor.init(colorLiteralRed: 0, green: 0, blue: 0, alpha: 0.3)
         
     }
     
