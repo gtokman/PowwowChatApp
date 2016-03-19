@@ -8,16 +8,23 @@
 
 import UIKit
 import Firebase
+import CircleMenu
 
 class MasterTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     // MARK: Outlets
     @IBOutlet weak var tableView: UITableView?
+    @IBOutlet weak var circleMenuButton: CircleMenu?
+    
+   
     
     // MARK: Constants
     let firebaseRef = Firebase(url: "https://powwowchat.firebaseio.com")
+    
     let userFirebaseRef = Firebase(url: "https://powwowchat.firebaseio.com/online")
     var user: User?
+    var buttons = [UIImage?]()
+  
     
     // MARK: TableViewController lifecycle
     
@@ -47,6 +54,10 @@ class MasterTableViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
+      
+        circleMenuButton?.delegate = self
+        
+        
         
     }
     
@@ -67,10 +78,11 @@ class MasterTableViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
      func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("userMessages", forIndexPath: indexPath)
-        
+        let cell = tableView.dequeueReusableCellWithIdentifier("myCell", forIndexPath: indexPath)
+       
         // Configure the cell...
         cell.textLabel?.text = "Hello"
+        cell.imageView?.image = UIImage(named: "Profile")
         
         return cell
         
@@ -78,6 +90,7 @@ class MasterTableViewController: UIViewController, UITableViewDelegate, UITableV
     
     // MARK: Actions
 
+    
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation

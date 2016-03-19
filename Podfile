@@ -13,6 +13,9 @@ pod ‘Bolts’
 pod ‘FBSDKCoreKit’
 pod ‘FBSDKLoginKit’
 
+# UI Elements
+pod 'CircleMenu', '~> 0.0.5'
+
 end
 
 target 'PowwowChatAppTests' do
