@@ -9,7 +9,13 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
+    
+    // MARK: Outlets
 
+    @IBOutlet weak var profileImageView: UIImageView?
+    @IBOutlet weak var profileEmailLabel: UILabel?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,9 +27,37 @@ class ProfileViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
+  
+    
     @IBAction func dismissViewAction(sender: UIBarButtonItem) {
         
         dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    // MARK: Actions
+    @IBAction func profileLogoutButton(sender: UIButton) {
+        
+       let alert = UIAlertController(title: "Please select", message: "Are you sure you want to log out?", preferredStyle: .ActionSheet)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { action -> Void in
+            print("Cancel")
+        }
+        
+        let logoutAction = UIAlertAction(title: "Logout", style: .Default ) { action -> Void in
+            print("Logout")
+            self.performSegueWithIdentifier("logout", sender: nil)
+        }
+        
+        alert.view.tintColor = UIColor.redColor()
+        alert.addAction(logoutAction)
+        alert.addAction(cancelAction)
+        
+        self.presentViewController(alert, animated: true, completion: nil)
+        
+        
     }
 
     /*

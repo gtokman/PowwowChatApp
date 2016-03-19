@@ -8,8 +8,12 @@
 
 import UIKit
 
-class SearchViewController: UIViewController {
-
+class SearchViewController: UIViewController, UITableViewDataSource {
+    
+    // MARK: Outlets
+    
+    @IBOutlet weak var tableView: UITableView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,6 +23,25 @@ class SearchViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
+    
+    // MARK: Table view data source
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return 1
+        
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("myCell", forIndexPath: indexPath)
+        
+        return cell
+        
     }
     
     @IBAction func dismissViewButton(sender: UIBarButtonItem) {
