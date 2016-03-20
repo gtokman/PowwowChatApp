@@ -190,7 +190,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="tRy-65-nd9" kind="show" id="Lx8-wK-Rvw"/>
+                                            <segue destination="tRy-65-nd9" kind="show" identifier="MessageViewController" id="Lx8-wK-Rvw"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -256,7 +256,7 @@
         <!--Detail-->
         <scene sceneID="mXX-zH-Fys">
             <objects>
-                <viewController title="Detail" id="tRy-65-nd9" sceneMemberID="viewController">
+                <viewController title="Detail" id="tRy-65-nd9" customClass="MessageViewController" customModule="PowwowChatApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="03e-wc-GFN"/>
                         <viewControllerLayoutGuide type="bottom" id="BPP-yp-gDS"/>
