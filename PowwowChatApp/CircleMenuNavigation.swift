@@ -11,9 +11,8 @@ import CircleMenu
 
 extension MasterTableViewController: CircleMenuDelegate {
     
-    
-    
     // MARK: Circle menu delegate
+    
     func circleMenu(circleMenu: CircleMenu, willDisplay button: CircleMenuButton, atIndex: Int) {
         
         let cancelButton  = UIImage(named: "Cancel")
@@ -54,7 +53,11 @@ extension MasterTableViewController: CircleMenuDelegate {
                 print("Error finding Profile view controller")
                 return
             }
-            self.navigationController?.presentViewController(profileViewController, animated: true, completion: nil)
+            self.navigationController?.presentViewController(profileViewController, animated: true) {
+                
+                print("profile")
+                
+            }
         }
         
     }

@@ -16,6 +16,9 @@ pod ‘FBSDKLoginKit’
 # UI Elements
 pod 'CircleMenu', '~> 0.0.5'
 
+# Messsages
+pod 'JSQMessagesViewController'
+
 end
 
 target 'PowwowChatAppTests' do

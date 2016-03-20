@@ -16,8 +16,6 @@ class MasterTableViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var tableView: UITableView?
     @IBOutlet weak var circleMenuButton: CircleMenu?
     
-   
-    
     // MARK: Constants
     let firebaseRef = Firebase(url: "https://powwowchat.firebaseio.com")
     
@@ -38,7 +36,7 @@ class MasterTableViewController: UIViewController, UITableViewDelegate, UITableV
                 return
                 
             }
-            
+        
             // Success
             print("user successfully logined in \(auth.uid)")
             self.user = User(auth: auth)
@@ -46,6 +44,7 @@ class MasterTableViewController: UIViewController, UITableViewDelegate, UITableV
             // Monitor user online status
             let currentUserRef = self.userFirebaseRef.childByAppendingPath(self.user?.uid)
             currentUserRef.setValue(self.user?.email)
+            print(self.user?.email)
             currentUserRef.onDisconnectRemoveValue()
             
         }
@@ -56,8 +55,6 @@ class MasterTableViewController: UIViewController, UITableViewDelegate, UITableV
         super.viewDidLoad()
       
         circleMenuButton?.delegate = self
-        
-        
         
     }
     
@@ -97,6 +94,13 @@ class MasterTableViewController: UIViewController, UITableViewDelegate, UITableV
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "profile" {
+           
+            
+            
+            
+        }
     }
     
 }

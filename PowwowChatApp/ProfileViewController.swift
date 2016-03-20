@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ProfileViewController: UIViewController {
     
@@ -14,12 +15,20 @@ class ProfileViewController: UIViewController {
 
     @IBOutlet weak var profileImageView: UIImageView?
     @IBOutlet weak var profileEmailLabel: UILabel?
+    var user: User?
+     let userFirebaseRef = Firebase(url: "https://powwowchat.firebaseio.com/online")
     
+    
+    // MARK: Life Cyle
+    
+    override func viewDidAppear(animated: Bool) {
+         super.viewDidAppear(animated)
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+      
     }
 
     override func didReceiveMemoryWarning() {
