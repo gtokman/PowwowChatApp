@@ -22,8 +22,32 @@ class MessageViewController: JSQMessagesViewController {
     var outgoingMessage: JSQMessagesBubbleImage?
     var incomingMessage: JSQMessagesBubbleImage?
     var messageRef: Firebase?
+    var userIsTypingRef: Firebase?
+    private var localTyping = false
+    var usersTypingQuery: FQuery?
+    
+    var isTyping: Bool {
+        get {
+            return localTyping
+        }
+        
+        set(newMessage) {
+            localTyping = newMessage
+            userIsTypingRef?.setValue(newMessage)
+        }
+    }
+    
+    
     
     // MARK: LifeCycle
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // Query messages
+        observeFirebaseNewMessages()
+        observeUserTyping()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +81,55 @@ class MessageViewController: JSQMessagesViewController {
         let message = JSQMessage(senderId: id, displayName: "", text: text)
         
         messages.append(message)
+        
+    }
+    
+    private func observeFirebaseNewMessages() {
+        
+        // Limit query to last 25 messages
+        let messagesQuery = messageRef?.queryLimitedToLast(25)
+        
+        // Observe for every child item at "messages" key
+        messagesQuery?.observeEventType(.ChildAdded) { (snapshot: FDataSnapshot!) in
+            
+            // Get value of the messages
+            let id = snapshot.value["senderId"] as! String
+            let message = snapshot.value["message"] as! String
+            
+            // Add messages to data model
+            self.addMessageToChat(senderId: id, message: message)
+            
+            // Display to user
+            self.finishReceivingMessage()
+            
+        }
+    }
+    
+    private func observeUserTyping() {
+        
+        // Create child to store user typing
+        let typingIndicatorRef = firebaseRef.childByAppendingPath("typingIndicator")
+        
+        // Remove on disconnect
+        userIsTypingRef = typingIndicatorRef.childByAppendingPath(senderId)
+        userIsTypingRef?.onDisconnectRemoveValue()
+        
+        // Get all users typing
+        usersTypingQuery = typingIndicatorRef.queryOrderedByValue().queryEqualToValue(true)
+        
+        // Observe typingIndicator for changes
+        usersTypingQuery?.observeEventType(.Value) { (data: FDataSnapshot!) in
+            
+            // Dont display if local user is typing
+            if data.childrenCount == 1 && self.isTyping  {
+                return
+            }
+            
+            // Display chat indicator
+            self.showTypingIndicator = data.childrenCount > 0
+            self.scrollToBottomAnimated(true)
+            
+        }
         
     }
     
@@ -126,6 +199,17 @@ class MessageViewController: JSQMessagesViewController {
         // Add sound and animation to chat
         JSQSystemSoundPlayer.jsq_playMessageSentSound()
         finishSendingMessage()
+        
+        // Message sent
+        isTyping = false
+        
+    }
+    
+    override func textViewDidChange(textView: UITextView) {
+        super.textViewDidChange(textView)
+        
+        // check if the user is typing
+        isTyping = textView.text != ""
         
     }
 
