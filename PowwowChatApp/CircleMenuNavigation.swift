@@ -15,14 +15,13 @@ extension MasterTableViewController: CircleMenuDelegate {
     
     func circleMenu(circleMenu: CircleMenu, willDisplay button: CircleMenuButton, atIndex: Int) {
         
-        let cancelButton  = UIImage(named: "Cancel")
         let profileButton  = UIImage(named: "Profile")
         let searchButton = UIImage(named: "Search")
+        let  cancelButton = UIImage(named: "Cancel")
         
         buttons += [searchButton, cancelButton, profileButton]
         
         button.setImage(buttons[atIndex], forState: .Normal)
-        button.tintColor = UIColor.init(colorLiteralRed: 0, green: 0, blue: 0, alpha: 0.3)
         
     }
     
@@ -43,7 +42,6 @@ extension MasterTableViewController: CircleMenuDelegate {
                 return
             }
             self.navigationController?.presentViewController(searchViewController, animated: true, completion: nil)
-            
         case 1:
             print("Cancel button")
         default:

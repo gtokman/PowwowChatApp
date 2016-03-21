@@ -37,3 +37,15 @@ extension UIColor {
         return UIColor(red: 203.0/255.0, green: 117.0/255.0, blue: 117.0/255.0, alpha: 1.0)
     }
 }
+
+extension UIColor {
+    static func powwowBlue() -> UIColor {
+        return UIColor(red: 165.0/255.0, green: 223.0/255.0, blue: 249.0/255.0, alpha: 1.0)
+    }
+}
+
+extension UIColor {
+    static func powwowGreen() -> UIColor {
+        return UIColor(red: 96.0/255.0, green: 197.0/255.0, blue: 186.0/255.0, alpha: 1.0)
+    }
+}

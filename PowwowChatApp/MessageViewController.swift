@@ -70,12 +70,12 @@ class MessageViewController: JSQMessagesViewController {
         let factory = JSQMessagesBubbleImageFactory()
         
         // Message bubble color
-        outgoingMessage = factory.outgoingMessagesBubbleImageWithColor(UIColor.jsq_messageBubbleBlueColor())
+        outgoingMessage = factory.outgoingMessagesBubbleImageWithColor(UIColor.powwowRed())
         incomingMessage = factory.incomingMessagesBubbleImageWithColor(UIColor.jsq_messageBubbleLightGrayColor())
         
         // Avatar image
-        outgoingAvatarImage = JSQMessagesAvatarImageFactory.avatarImageWithUserInitials("", backgroundColor: UIColor.redColor(), textColor: UIColor.whiteColor(), font: UIFont.boldSystemFontOfSize(10), diameter: UInt(kJSQMessagesCollectionViewAvatarSizeDefault))
-        incomingAvatarImage = JSQMessagesAvatarImageFactory.avatarImageWithUserInitials("", backgroundColor: UIColor.blueColor(), textColor: UIColor.blackColor(), font: UIFont.boldSystemFontOfSize(10), diameter: UInt(kJSQMessagesCollectionViewAvatarSizeDefault))
+        outgoingAvatarImage = JSQMessagesAvatarImageFactory.avatarImageWithUserInitials("", backgroundColor: UIColor.powwowBlue(), textColor: UIColor.whiteColor(), font: UIFont.boldSystemFontOfSize(10), diameter: UInt(kJSQMessagesCollectionViewAvatarSizeDefault))
+        incomingAvatarImage = JSQMessagesAvatarImageFactory.avatarImageWithUserInitials("", backgroundColor: UIColor.powwowGreen(), textColor: UIColor.blackColor(), font: UIFont.boldSystemFontOfSize(10), diameter: UInt(kJSQMessagesCollectionViewAvatarSizeDefault))
     }
     
     func addMessageToChat(senderId id: String, message text: String) {

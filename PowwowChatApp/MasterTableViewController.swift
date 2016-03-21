@@ -79,8 +79,9 @@ class MasterTableViewController: UIViewController, UITableViewDelegate, UITableV
         let cell = tableView.dequeueReusableCellWithIdentifier("myCell", forIndexPath: indexPath)
        
         // Configure the cell...
-        cell.textLabel?.text = "Hello"
+        cell.textLabel?.text = "Powwow"
         cell.imageView?.image = UIImage(named: "Profile")
+        cell.detailTextLabel?.text = "Public chat room"
         
         return cell
         
