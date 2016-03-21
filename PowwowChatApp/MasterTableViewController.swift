@@ -19,7 +19,7 @@ class MasterTableViewController: UIViewController, UITableViewDelegate, UITableV
     // MARK: Constants
     let firebaseRef = Firebase(url: "https://powwowchat.firebaseio.com")
     
-    let userFirebaseRef = Firebase(url: "https://powwowchat.firebaseio.com/online")
+    
     var user: User?
     var buttons = [UIImage?]()
   
@@ -28,32 +28,33 @@ class MasterTableViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        firebaseRef.observeAuthEventWithBlock { (let auth) in
-            
-            guard auth != nil else {
-                print("User did not segue to table: \(auth.uid)")
-                
-                return
-                
-            }
         
-            // Success
-            print("user successfully logined in \(auth.uid)")
-            self.user = User(auth: auth)
-            
-            // Monitor user online status
-            let currentUserRef = self.userFirebaseRef.childByAppendingPath(self.user?.uid)
-            currentUserRef.setValue(self.user?.email)
-            print(self.user?.email)
-            currentUserRef.onDisconnectRemoveValue()
-            
-        }
+//        firebaseRef.observeAuthEventWithBlock { (let auth) in
+//            
+//            guard auth != nil else {
+//                print("User did not segue to table: \(auth.uid)")
+//                
+//                return
+//                
+//            }
+//        
+//            // Success
+//            print("user successfully logined in \(auth.uid)")
+//            self.user = User(auth: auth)
+//            
+//            // Monitor user online status
+//            let currentUserRef = self.firebaseRef.childByAppendingPath(self.user?.uid)
+//            currentUserRef.setValue(self.user?.email)
+//            print(self.user?.email)
+//           // currentUserRef.onDisconnectRemoveValue()
+//            
+//        }
         
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      
+        //print("USER: \(userFirebaseRef.authData.uid)")
         circleMenuButton?.delegate = self
         
     }
@@ -78,8 +79,9 @@ class MasterTableViewController: UIViewController, UITableViewDelegate, UITableV
         let cell = tableView.dequeueReusableCellWithIdentifier("myCell", forIndexPath: indexPath)
        
         // Configure the cell...
-        cell.textLabel?.text = "Hello"
+        cell.textLabel?.text = "Powwow"
         cell.imageView?.image = UIImage(named: "Profile")
+        cell.detailTextLabel?.text = "Public chat room"
         
         return cell
         
@@ -90,16 +92,19 @@ class MasterTableViewController: UIViewController, UITableViewDelegate, UITableV
     
     // MARK: - Navigation
     
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
         
-        if segue.identifier == "profile" {
-           
+        if segue.identifier == "MessageViewController" {
+         
+        guard let messageViewController = segue.destinationViewController as? MessageViewController else {
+            print("messageViewController failed")
+            return
+        }
             
-            
-            
+            print(user?.email)
+        messageViewController.senderId = firebaseRef.authData.uid
+        messageViewController.senderDisplayName = ""
+    
         }
     }
     
