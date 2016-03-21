@@ -10,6 +10,8 @@ import UIKit
 import JSQMessagesViewController
 import Firebase
 
+
+
 class MessageViewController: JSQMessagesViewController {
     
     // MARK: Constants
@@ -19,12 +21,16 @@ class MessageViewController: JSQMessagesViewController {
     // MARK: Properties
     
     var messages = [JSQMessage]()
+    var avatars = [JSQMessage]()
     var outgoingMessage: JSQMessagesBubbleImage?
     var incomingMessage: JSQMessagesBubbleImage?
+    var outgoingAvatarImage: JSQMessagesAvatarImage?
+    var incomingAvatarImage: JSQMessagesAvatarImage?
     var messageRef: Firebase?
     var userIsTypingRef: Firebase?
     private var localTyping = false
     var usersTypingQuery: FQuery?
+    var user: User?
     
     var isTyping: Bool {
         get {
@@ -37,8 +43,6 @@ class MessageViewController: JSQMessagesViewController {
         }
     }
     
-    
-    
     // MARK: LifeCycle
     
     override func viewDidAppear(animated: Bool) {
@@ -48,21 +52,16 @@ class MessageViewController: JSQMessagesViewController {
         observeFirebaseNewMessages()
         observeUserTyping()
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       setupMessageBubbles()
-        
-        // Message avatars
-        collectionView?.collectionViewLayout.incomingAvatarViewSize = CGSizeZero
-        collectionView?.collectionViewLayout.outgoingAvatarViewSize = CGSizeZero
+        setupMessageBubbles()
         
         // Add key to rootRef
         messageRef = firebaseRef.childByAppendingPath("messages")
         
     }
-    
     
     // MARK: JSQMessages helper
     
@@ -74,6 +73,9 @@ class MessageViewController: JSQMessagesViewController {
         outgoingMessage = factory.outgoingMessagesBubbleImageWithColor(UIColor.jsq_messageBubbleBlueColor())
         incomingMessage = factory.incomingMessagesBubbleImageWithColor(UIColor.jsq_messageBubbleLightGrayColor())
         
+        // Avatar image
+        outgoingAvatarImage = JSQMessagesAvatarImageFactory.avatarImageWithUserInitials("", backgroundColor: UIColor.redColor(), textColor: UIColor.whiteColor(), font: UIFont.boldSystemFontOfSize(10), diameter: UInt(kJSQMessagesCollectionViewAvatarSizeDefault))
+        incomingAvatarImage = JSQMessagesAvatarImageFactory.avatarImageWithUserInitials("", backgroundColor: UIColor.blueColor(), textColor: UIColor.blackColor(), font: UIFont.boldSystemFontOfSize(10), diameter: UInt(kJSQMessagesCollectionViewAvatarSizeDefault))
     }
     
     func addMessageToChat(senderId id: String, message text: String) {
@@ -156,14 +158,20 @@ class MessageViewController: JSQMessagesViewController {
         } else {
             return incomingMessage
         }
-       
+        
     }
     
     // TODO: Add Image support
     override func collectionView(collectionView: JSQMessagesCollectionView!, avatarImageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageAvatarImageDataSource! {
         
-        return nil
-    
+        let avatarImage = messages[indexPath.row]
+        
+        if avatarImage.senderId == senderId {
+            return outgoingAvatarImage
+        } else {
+            return incomingAvatarImage
+        }
+        
     }
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -205,6 +213,11 @@ class MessageViewController: JSQMessagesViewController {
         
     }
     
+    override func didPressAccessoryButton(sender: UIButton!) {
+       let alert = SweetAlert()
+        alert.showAlert("Not supported!")
+    }
+    
     override func textViewDidChange(textView: UITextView) {
         super.textViewDidChange(textView)
         
@@ -212,6 +225,6 @@ class MessageViewController: JSQMessagesViewController {
         isTyping = textView.text != ""
         
     }
-
+    
     
 }

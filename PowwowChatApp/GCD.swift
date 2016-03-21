@@ -16,3 +16,18 @@ func performUIUpdatesOnMain(updates: Update) {
         updates()
     }
 }
+
+extension String {
+    
+    func truncate(length: Int) -> String {
+        if self.characters.count > length {
+            
+            let shortenedString = self.substringToIndex(self.startIndex.advancedBy(length))
+            
+            return shortenedString
+            
+        } else {
+            return self
+        }
+    }
+}

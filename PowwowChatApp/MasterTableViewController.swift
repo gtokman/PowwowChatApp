@@ -18,7 +18,7 @@ class MasterTableViewController: UIViewController, UITableViewDelegate, UITableV
     
     // MARK: Constants
     let firebaseRef = Firebase(url: "https://powwowchat.firebaseio.com")
-    //let userFirebaseRef = Firebase(url: "https://powwowchat.firebaseio.com/online")
+    
     
     var user: User?
     var buttons = [UIImage?]()
@@ -28,6 +28,7 @@ class MasterTableViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        
 //        firebaseRef.observeAuthEventWithBlock { (let auth) in
 //            
 //            guard auth != nil else {
@@ -98,6 +99,8 @@ class MasterTableViewController: UIViewController, UITableViewDelegate, UITableV
             print("messageViewController failed")
             return
         }
+            
+            print(user?.email)
         messageViewController.senderId = firebaseRef.authData.uid
         messageViewController.senderDisplayName = ""
     
