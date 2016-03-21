@@ -6,7 +6,7 @@
 //  Copyright © 2016 garytokman. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 typealias Update = () -> Void
 
@@ -29,5 +29,11 @@ extension String {
         } else {
             return self
         }
+    }
+}
+
+extension UIColor {
+    static func powwowRed() -> UIColor {
+        return UIColor(red: 203.0/255.0, green: 117.0/255.0, blue: 117.0/255.0, alpha: 1.0)
     }
 }

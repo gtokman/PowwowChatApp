@@ -123,8 +123,8 @@
 			isa = PBXGroup;
 			children = (
 				0205AA1B1C9C886900DA3C90 /* CircleMenuNavigation.swift */,
-				02BE3AC71C9DA66400DB51CC /* SearchViewController.swift */,
 				02BE3AC91C9DA68600DB51CC /* ProfileViewController.swift */,
+				02BE3AC71C9DA66400DB51CC /* SearchViewController.swift */,
 				02BE3ACE1C9DEAE500DB51CC /* UserSearch.swift */,
 			);
 			name = Navigation;

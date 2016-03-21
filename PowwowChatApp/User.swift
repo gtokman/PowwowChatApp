@@ -31,8 +31,8 @@ struct User {
     }
 
     // Stored properties
-    let uid: String
-    let email: String
+    var uid: String
+    var email: String
     
   
 }
