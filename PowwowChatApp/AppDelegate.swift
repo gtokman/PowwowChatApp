@@ -9,15 +9,24 @@
 import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
+    override init() {
+        Firebase.defaultConfig().persistenceEnabled = true
+    }
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // UIDesign
+        UISearchBar.appearance().barTintColor = UIColor.powwowRed()
+        UISearchBar.appearance().tintColor = UIColor.whiteColor()
+        UITextField.appearanceWhenContainedInInstancesOfClasses([UISearchBar.self]).tintColor = UIColor.powwowRed()
         
         
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)

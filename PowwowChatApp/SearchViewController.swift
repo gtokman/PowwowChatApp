@@ -17,38 +17,74 @@ class SearchViewController: UIViewController, UITableViewDataSource {
     // MARK: Constants
     
     let searchController = UISearchController(searchResultsController: nil)
+    
+    // MARK: Properties
+    
     var filteredUsers = [User]()
     var users = [User]()
+    
+    // MARK: View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let user1 = User(uid: "dfsa", email: "g.tok138")
-        let user2 = User(uid: "dfsad", email: "bok138")
-        users += [user1, user2]
+        // Add scope to searchBar
+        searchController.searchBar.scopeButtonTitles = ["All", "Online", "Offline"]
+        searchController.searchBar.delegate = self
+        
+        
+        // Sample users
+        users = [
+            
+            User(uid: "Online", email: "g.tok138@gmail.com"),
+            User(uid: "Offline", email: "tokman@gmail.com"),
+            User(uid: "Online", email: "tester@gmail.com"),
+            User(uid: "Offline", email: "sma@gmail.com"),
+            User(uid: "Online", email: "hello@gmail.com")
+        
+        ]
+        
+        
         searchDesignProperties()
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
     
     // MARK: Table view data source
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         
         return 1
         
     }
     
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if searchController.active && searchController.searchBar.text != "" {
+            
+            return filteredUsers.count
+            
+        }
+        
+        return users.count
+        
+    }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("myCell", forIndexPath: indexPath)
+        
+        let user: User
+        
+        if searchController.active && searchController.searchBar.text != "" {
+            user = filteredUsers[indexPath.row]
+        } else {
+            user = users[indexPath.row]
+        }
+        
+        cell.textLabel?.text = user.email
+        cell.detailTextLabel?.text = user.uid
         
         return cell
         
@@ -58,14 +94,5 @@ class SearchViewController: UIViewController, UITableViewDataSource {
         dismissViewControllerAnimated(true, completion: nil)
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
