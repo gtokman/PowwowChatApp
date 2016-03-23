@@ -8,8 +8,6 @@
 
 import UIKit
 
-typealias CreatedUserCompletion = () -> Void
-
 /** Create alert */
 func createAlertController(alertMessage message: String, alertTitle title: String, actionTitle actionTitl: String, resetPassword reset: Bool) -> UIAlertController  {
     
@@ -143,7 +141,7 @@ func alertUserAction(actionTitle title: String, alertController alert: UIAlertCo
 /** Reset the users password */
 func userForgotPassword(userEmail email: String?) {
     
-    firebaseRef.resetPasswordForUser(email) { (error: NSError!) in
+    baseURL.resetPasswordForUser(email) { (error: NSError!) in
         guard error == nil else {
             do {
                 try userErrors(error)
@@ -169,7 +167,7 @@ func userForgotPassword(userEmail email: String?) {
 func createUser(userEmail email: String?, userPassword password: String?) {
     
     // Create the user
-    firebaseRef.createUser(email, password: password) { (error, auth) in
+    baseURL.createUser(email, password: password) { (error, auth) in
         
         /*GUARD ERROR creating account*/
         guard error == nil else {
@@ -193,7 +191,7 @@ func createUser(userEmail email: String?, userPassword password: String?) {
         }
         
         // Add user
-        firebaseRef.authUser(email, password: password, withCompletionBlock: { (error, auth) in
+        baseURL.authUser(email, password: password, withCompletionBlock: { (error, auth) in
             
             print("user added")
             newAlert.showAlert("Success", subTitle: "Account created", style: AlertStyle.Success)

@@ -23,7 +23,6 @@ class LoginViewController: UIViewController {
     // MARK: Constants
     
     var newAlert = SweetAlert()
-    let firebaseRef = Firebase(url: "https://powwowchat.firebaseio.com")
     
     // MARK: LoginViewController Lifecycle
     

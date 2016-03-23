@@ -25,35 +25,43 @@ class SearchViewController: UIViewController, UITableViewDataSource {
     
     // MARK: View Life Cycle
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+         getGurrentUser()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Add scope to searchBar
-        searchController.searchBar.scopeButtonTitles = ["All", "Online", "Offline"]
-        searchController.searchBar.delegate = self
-        
-        
-        // Sample users
-        users = [
-            
-            User(uid: "Online", email: "g.tok138@gmail.com"),
-            User(uid: "Offline", email: "tokman@gmail.com"),
-            User(uid: "Online", email: "tester@gmail.com"),
-            User(uid: "Offline", email: "sma@gmail.com"),
-            User(uid: "Online", email: "hello@gmail.com")
-        
-        ]
-        
-        
+       
         searchDesignProperties()
-        // Do any additional setup after loading the view.
     }
-
-    override func prefersStatusBarHidden() -> Bool {
-        return true
+    
+    
+    // MARK: Helper
+    
+    func getGurrentUser () {
+        
+        let usersRef = baseURL.childByAppendingPath("Users")
+        
+        usersRef.observeEventType( .ChildAdded, withBlock: { snapshot in
+        
+            print("The value is \(snapshot.value)")
+            
+           let user = User(uid: "", email: snapshot.value as! String, key: nil, ref: nil)
+            
+            self.users.append(user)
+            print(self.users.count)
+            self.tableView?.reloadData()
+        
+        })
+        
+        
     }
     
     // MARK: Table view data source
+    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         
         return 1

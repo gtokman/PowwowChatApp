@@ -71,7 +71,7 @@ extension LoginViewController: UITextFieldDelegate {
         userNameTextField?.resignFirstResponder()
         passwordTextField?.becomeFirstResponder()
         
-        firebaseRef.authUser(userNameTextField?.text, password: passwordTextField?.text, withCompletionBlock: { (let error, let auth) in
+        baseURL.authUser(userNameTextField?.text, password: passwordTextField?.text, withCompletionBlock: { (let error, let auth) in
             
             guard error == nil else {
                 // handle errors
@@ -128,7 +128,7 @@ extension LoginViewController: UITextFieldDelegate {
             }
             
             // Add to Firebase
-            self.firebaseRef.authWithOAuthProvider("facebook", token: accessToken.tokenString, withCompletionBlock: { (let error, let auth) in
+            baseURL.authWithOAuthProvider("facebook", token: accessToken.tokenString, withCompletionBlock: { (let error, let auth) in
                 
                 guard error == nil else {
                     // Handle error

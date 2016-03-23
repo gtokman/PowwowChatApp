@@ -16,6 +16,11 @@ extension SearchViewController {
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
         tableView?.tableHeaderView = searchController.searchBar
+       
+        
+        // Add scope to searchBar
+        searchController.searchBar.scopeButtonTitles = ["All", "Online", "Offline"]
+        searchController.searchBar.delegate = self
         
     }
     
@@ -62,6 +67,10 @@ extension SearchViewController: UISearchBarDelegate {
         filterUsersForSearch(searchText: searchBar.text!, searchScope: searchBar.scopeButtonTitles![selectedScope])
         
     }
-    
-    
+}
+
+extension SearchViewController: UIBarPositioningDelegate {
+    func positionForBar(bar: UIBarPositioning) -> UIBarPosition {
+        return .TopAttached
+    }
 }

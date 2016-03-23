@@ -9,7 +9,7 @@
 import Foundation
 import Firebase
 
-let firebaseRef = Firebase(url: "https://powwowchat.firebaseio.com")
+
 var newAlert = SweetAlert()
 struct User {
     
@@ -31,8 +31,26 @@ struct User {
     }
 
     // Stored properties
+    
     var uid: String
     var email: String
+    var key: String?
+    let ref: Firebase?
+   // var image: String
+    
+    init(uid: String, email: String, key: String?, ref: Firebase?) {
+        self.uid = uid
+        self.email = email
+        self.key = key
+        self.ref = ref
+    }
+    
+    func toAnyObject() -> AnyObject {
+        return [
+            "name": email,
+            "uid": uid,
+        ]
+    }
     
   
 }
@@ -43,5 +61,17 @@ extension User {
     init(auth: FAuthData) {
         uid = auth.uid
         email = auth.providerData["email"] as! String
+        ref = nil
+        key = ""
+    }
+}
+
+extension User {
+    init(snapshot: FDataSnapshot) {
+        self.key = snapshot.key
+        self.email = snapshot.value["email"] as! String
+        self.uid = snapshot.value["uid"] as! String
+        ref = snapshot.ref
+        
     }
 }

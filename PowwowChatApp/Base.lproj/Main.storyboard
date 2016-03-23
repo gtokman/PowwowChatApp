@@ -451,7 +451,7 @@
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eTn-RN-Mf5">
-                                <rect key="frame" x="0.0" y="66" width="600" height="556"/>
+                                <rect key="frame" x="0.0" y="66" width="600" height="534"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="myCell" id="6aW-Wc-HsP">
@@ -471,21 +471,36 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="NZm-lg-qsR" firstAttribute="top" secondItem="eTn-RN-Mf5" secondAttribute="bottom" constant="-22" id="2an-u2-q3r"/>
+                            <constraint firstItem="NZm-lg-qsR" firstAttribute="top" secondItem="eTn-RN-Mf5" secondAttribute="bottom" id="2an-u2-q3r"/>
                             <constraint firstAttribute="trailing" secondItem="Pd6-gK-0au" secondAttribute="trailing" id="Emw-AF-Yey"/>
                             <constraint firstAttribute="trailing" secondItem="eTn-RN-Mf5" secondAttribute="trailing" id="GDi-a1-Bqc"/>
+                            <constraint firstItem="eTn-RN-Mf5" firstAttribute="top" secondItem="Pd6-gK-0au" secondAttribute="bottom" id="KKO-fB-OJu"/>
                             <constraint firstItem="Pd6-gK-0au" firstAttribute="leading" secondItem="AAs-IZ-zz7" secondAttribute="leading" id="OEK-w5-1v6"/>
                             <constraint firstItem="eTn-RN-Mf5" firstAttribute="leading" secondItem="AAs-IZ-zz7" secondAttribute="leading" id="RZq-dq-N9V"/>
                             <constraint firstItem="Pd6-gK-0au" firstAttribute="top" secondItem="AAs-IZ-zz7" secondAttribute="top" id="ZW9-vp-BOO"/>
                             <constraint firstItem="eTn-RN-Mf5" firstAttribute="top" secondItem="Pd6-gK-0au" secondAttribute="bottom" id="iX4-T4-YMn"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="iX4-T4-YMn"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="OF8-5X-e3S"/>
                     <connections>
+                        <outlet property="searchDisplayController" destination="cV6-po-e9W" id="CEk-Xf-bqS"/>
                         <outlet property="tableView" destination="eTn-RN-Mf5" id="RU0-XN-YyV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8TR-fR-lB3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="cV6-po-e9W">
+                    <connections>
+                        <outlet property="delegate" destination="YTr-yz-ald" id="shN-Gh-V8t"/>
+                        <outlet property="searchContentsController" destination="YTr-yz-ald" id="qID-C5-MG7"/>
+                        <outlet property="searchResultsDataSource" destination="YTr-yz-ald" id="j6R-gl-V7b"/>
+                        <outlet property="searchResultsDelegate" destination="YTr-yz-ald" id="XRX-dv-T8v"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="1555" y="-347"/>
         </scene>

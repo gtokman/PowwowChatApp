@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0205AA1C1C9C886900DA3C90 /* CircleMenuNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0205AA1B1C9C886900DA3C90 /* CircleMenuNavigation.swift */; };
+		021A24001CA2076D00C290D0 /* FirebaseRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021A23FF1CA2076D00C290D0 /* FirebaseRef.swift */; };
 		027D27721C99C80800DBD08B /* GCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027D27711C99C80800DBD08B /* GCD.swift */; };
 		027D27741C99D46D00DBD08B /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027D27731C99D46D00DBD08B /* Helper.swift */; };
 		029339461C96564C00EE8B97 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029339451C96564C00EE8B97 /* User.swift */; };
@@ -47,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		0205AA1B1C9C886900DA3C90 /* CircleMenuNavigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleMenuNavigation.swift; sourceTree = "<group>"; };
+		021A23FF1CA2076D00C290D0 /* FirebaseRef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseRef.swift; sourceTree = "<group>"; };
 		027D27711C99C80800DBD08B /* GCD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCD.swift; sourceTree = "<group>"; };
 		027D27731C99D46D00DBD08B /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		029339451C96564C00EE8B97 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				02F3D21B1C950181006C77A7 /* Info.plist */,
 				027D27711C99C80800DBD08B /* GCD.swift */,
 				027D27731C99D46D00DBD08B /* Helper.swift */,
+				021A23FF1CA2076D00C290D0 /* FirebaseRef.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -438,6 +441,7 @@
 			files = (
 				02BE3ACF1C9DEAE500DB51CC /* UserSearch.swift in Sources */,
 				02BE3AD41C9E45B100DB51CC /* MessageViewController.swift in Sources */,
+				021A24001CA2076D00C290D0 /* FirebaseRef.swift in Sources */,
 				02BE3AC81C9DA66400DB51CC /* SearchViewController.swift in Sources */,
 				027D27721C99C80800DBD08B /* GCD.swift in Sources */,
 				02F3D2441C960368006C77A7 /* LoginViewControllerExtension.swift in Sources */,

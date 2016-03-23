@@ -16,7 +16,7 @@ class MessageViewController: JSQMessagesViewController {
     
     // MARK: Constants
     
-    let firebaseRef = Firebase(url: "https://powwowchat.firebaseio.com")
+    
     
     // MARK: Properties
     
@@ -59,7 +59,7 @@ class MessageViewController: JSQMessagesViewController {
         setupMessageBubbles()
         
         // Add key to rootRef
-        messageRef = firebaseRef.childByAppendingPath("messages")
+        messageRef = baseURL.childByAppendingPath("messages")
         
     }
     
@@ -110,7 +110,7 @@ class MessageViewController: JSQMessagesViewController {
     private func observeUserTyping() {
         
         // Create child to store user typing
-        let typingIndicatorRef = firebaseRef.childByAppendingPath("typingIndicator")
+        let typingIndicatorRef = baseURL.childByAppendingPath("typingIndicator")
         
         // Remove on disconnect
         userIsTypingRef = typingIndicatorRef.childByAppendingPath(senderId)
