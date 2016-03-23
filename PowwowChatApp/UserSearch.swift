@@ -19,7 +19,7 @@ extension SearchViewController {
        
         
         // Add scope to searchBar
-        searchController.searchBar.scopeButtonTitles = ["All", "Online", "Offline"]
+        //searchController.searchBar.scopeButtonTitles = ["All", "Online", "Offline"]
         searchController.searchBar.delegate = self
         
     }
@@ -49,11 +49,11 @@ extension SearchViewController {
 extension SearchViewController: UISearchResultsUpdating {
     
     func updateSearchResultsForSearchController(searchController: UISearchController) {
-        let searchBar = searchController.searchBar
-        let scope = searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
+        //let searchBar = searchController.searchBar
+       // let scope = searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
         
         // Filter
-        filterUsersForSearch(searchText: searchController.searchBar.text!, searchScope: scope)
+        filterUsersForSearch(searchText: searchController.searchBar.text!, searchScope: "")
         
     }
     
@@ -69,8 +69,3 @@ extension SearchViewController: UISearchBarDelegate {
     }
 }
 
-extension SearchViewController: UIBarPositioningDelegate {
-    func positionForBar(bar: UIBarPositioning) -> UIBarPosition {
-        return .TopAttached
-    }
-}

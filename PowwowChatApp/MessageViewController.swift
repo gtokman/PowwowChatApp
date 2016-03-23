@@ -13,11 +13,7 @@ import Firebase
 
 
 class MessageViewController: JSQMessagesViewController {
-    
-    // MARK: Constants
-    
-    
-    
+  
     // MARK: Properties
     
     var messages = [JSQMessage]()

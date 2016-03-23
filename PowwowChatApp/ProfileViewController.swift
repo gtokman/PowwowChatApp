@@ -44,6 +44,7 @@ class ProfileViewController: UIViewController {
                 print("Email is \(snapshot.value)")
                 let email = snapshot.value
                 self.profileEmailLabel?.text = email as? String
+                
             }
         })
         

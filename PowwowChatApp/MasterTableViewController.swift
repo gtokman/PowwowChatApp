@@ -72,8 +72,6 @@ class MasterTableViewController: UIViewController, UITableViewDelegate, UITableV
         
     }
     
-    
-    
     // MARK: - Table view data source
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -93,12 +91,10 @@ class MasterTableViewController: UIViewController, UITableViewDelegate, UITableV
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("myCell", forIndexPath: indexPath)
         
-        let user = selectedUser?[indexPath.row]
-        
         // Configure the cell...
-        cell.textLabel?.text = user
+        cell.textLabel?.text = "Group Powwow"
         cell.imageView?.image = UIImage(named: "Profile")
-        cell.detailTextLabel?.text = "Public chat room"
+        cell.detailTextLabel?.text = "Public"
         
         
         return cell

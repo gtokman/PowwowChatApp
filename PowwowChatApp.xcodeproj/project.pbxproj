@@ -17,7 +17,6 @@
 		02BE3ACA1C9DA68600DB51CC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BE3AC91C9DA68600DB51CC /* ProfileViewController.swift */; };
 		02BE3ACF1C9DEAE500DB51CC /* UserSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BE3ACE1C9DEAE500DB51CC /* UserSearch.swift */; };
 		02BE3AD41C9E45B100DB51CC /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BE3AD31C9E45B100DB51CC /* MessageViewController.swift */; };
-		02D316AE1CA2404B008E7790 /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D316AD1CA2404B008E7790 /* Messages.swift */; };
 		02F3D2101C950181006C77A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F3D20F1C950181006C77A7 /* AppDelegate.swift */; };
 		02F3D2121C950181006C77A7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F3D2111C950181006C77A7 /* LoginViewController.swift */; };
 		02F3D2151C950181006C77A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02F3D2131C950181006C77A7 /* Main.storyboard */; };
@@ -58,7 +57,6 @@
 		02BE3AC91C9DA68600DB51CC /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		02BE3ACE1C9DEAE500DB51CC /* UserSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSearch.swift; sourceTree = "<group>"; };
 		02BE3AD31C9E45B100DB51CC /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
-		02D316AD1CA2404B008E7790 /* Messages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
 		02F3D20C1C950181006C77A7 /* PowwowChatApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PowwowChatApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02F3D20F1C950181006C77A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02F3D2111C950181006C77A7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -230,7 +228,6 @@
 			isa = PBXGroup;
 			children = (
 				029339451C96564C00EE8B97 /* User.swift */,
-				02D316AD1CA2404B008E7790 /* Messages.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -449,7 +446,6 @@
 				027D27721C99C80800DBD08B /* GCD.swift in Sources */,
 				02F3D2441C960368006C77A7 /* LoginViewControllerExtension.swift in Sources */,
 				0205AA1C1C9C886900DA3C90 /* CircleMenuNavigation.swift in Sources */,
-				02D316AE1CA2404B008E7790 /* Messages.swift in Sources */,
 				02F3D2121C950181006C77A7 /* LoginViewController.swift in Sources */,
 				029339461C96564C00EE8B97 /* User.swift in Sources */,
 				02BE3ACA1C9DA68600DB51CC /* ProfileViewController.swift in Sources */,
