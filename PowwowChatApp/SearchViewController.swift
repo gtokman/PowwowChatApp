@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchViewController: UIViewController, UITableViewDataSource {
+class SearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     // MARK: Outlets
     
@@ -50,7 +50,7 @@ class SearchViewController: UIViewController, UITableViewDataSource {
             print("The value is \(snapshot.value)")
             
            let user = User(uid: "", email: snapshot.value as! String, key: nil, ref: nil)
-            
+        
             self.users.append(user)
             print(self.users.count)
             self.tableView?.reloadData()
@@ -61,6 +61,7 @@ class SearchViewController: UIViewController, UITableViewDataSource {
     }
     
     // MARK: Table view data source
+    
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         
@@ -97,6 +98,23 @@ class SearchViewController: UIViewController, UITableViewDataSource {
         return cell
         
     }
+    
+    // MARK: TableViewDelegate
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        let selectedCell = indexPath.row
+        
+        dismissViewControllerAnimated(true, completion: {
+        
+            
+            
+        })
+        
+        
+    }
+    
+    
     
     @IBAction func dismissViewButton(sender: UIBarButtonItem) {
         dismissViewControllerAnimated(true, completion: nil)
