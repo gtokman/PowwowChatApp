@@ -29,11 +29,12 @@ class MasterTableViewController: UIViewController, UITableViewDelegate, UITableV
         //print("the new user is")
         
         
+        
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        addUserToFirebase()
+        
         
         
     }
@@ -41,6 +42,8 @@ class MasterTableViewController: UIViewController, UITableViewDelegate, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        addUserToFirebase()
         circleMenuButton?.delegate = self
         
     }
@@ -69,7 +72,7 @@ class MasterTableViewController: UIViewController, UITableViewDelegate, UITableV
         
     }
     
-
+    
     
     // MARK: - Table view data source
     
@@ -90,9 +93,10 @@ class MasterTableViewController: UIViewController, UITableViewDelegate, UITableV
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("myCell", forIndexPath: indexPath)
         
+        let user = selectedUser?[indexPath.row]
         
         // Configure the cell...
-        cell.textLabel?.text = "hello"
+        cell.textLabel?.text = user
         cell.imageView?.image = UIImage(named: "Profile")
         cell.detailTextLabel?.text = "Public chat room"
         

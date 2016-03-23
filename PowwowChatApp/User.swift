@@ -9,6 +9,7 @@
 import Foundation
 import Firebase
 
+var selectedUser = [String]?()
 
 var newAlert = SweetAlert()
 struct User {

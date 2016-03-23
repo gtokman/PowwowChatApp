@@ -27,7 +27,6 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
         displayCurrentUsersInSearch()
         
     }
@@ -58,6 +57,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         })
         
     }
+    
     
     // MARK: Table view data source
     
@@ -108,6 +108,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         dismissViewControllerAnimated(true, completion: {
             
             print("Selected email: \(selectedCell)")
+           
             
         })
         
