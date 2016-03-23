@@ -21,15 +21,20 @@ class MasterTableViewController: UIViewController, UITableViewDelegate, UITableV
     
     var user: User?
     var buttons = [UIImage?]()
-    var newUserChat: [User]?
-    
     
     // MARK: TableViewController lifecycle
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        //print("the new user is")
+        
+        
+    }
+    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
         addUserToFirebase()
+        
         
     }
     
@@ -64,6 +69,8 @@ class MasterTableViewController: UIViewController, UITableViewDelegate, UITableV
         
     }
     
+
+    
     // MARK: - Table view data source
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -83,10 +90,12 @@ class MasterTableViewController: UIViewController, UITableViewDelegate, UITableV
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("myCell", forIndexPath: indexPath)
         
+        
         // Configure the cell...
-        cell.textLabel?.text = "Powwow"
+        cell.textLabel?.text = "hello"
         cell.imageView?.image = UIImage(named: "Profile")
         cell.detailTextLabel?.text = "Public chat room"
+        
         
         return cell
         
