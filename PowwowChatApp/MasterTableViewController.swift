@@ -21,21 +21,29 @@ class MasterTableViewController: UIViewController, UITableViewDelegate, UITableV
     
     var user: User?
     var buttons = [UIImage?]()
-    var newUserChat: [User]?
-    
     
     // MARK: TableViewController lifecycle
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        //print("the new user is")
+        
+        
+        
+    }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        addUserToFirebase()
+        
         
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        addUserToFirebase()
         circleMenuButton?.delegate = self
         
     }
@@ -84,9 +92,10 @@ class MasterTableViewController: UIViewController, UITableViewDelegate, UITableV
         let cell = tableView.dequeueReusableCellWithIdentifier("myCell", forIndexPath: indexPath)
         
         // Configure the cell...
-        cell.textLabel?.text = "Powwow"
+        cell.textLabel?.text = "Group Powwow"
         cell.imageView?.image = UIImage(named: "Profile")
-        cell.detailTextLabel?.text = "Public chat room"
+        cell.detailTextLabel?.text = "Public"
+        
         
         return cell
         

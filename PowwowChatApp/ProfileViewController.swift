@@ -16,13 +16,13 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var profileImageView: UIImageView?
     @IBOutlet weak var profileEmailLabel: UILabel?
     var user: User?
-    let userFirebaseRef = Firebase(url: "https://powwowchat.firebaseio.com/online")
     
     
     // MARK: Life Cyle
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        displayUserEmail()
         
     }
     
@@ -31,21 +31,31 @@ class ProfileViewController: UIViewController {
         
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    // MARK: Helper
+    
+    func displayUserEmail() {
+        
+        baseURL.childByAppendingPath("Users").observeEventType(.ChildAdded, withBlock: { snapshot in
+        
+           // Check email is users
+            if baseURL.authData.uid == snapshot.key {
+                
+                print("Email is \(snapshot.value)")
+                let email = snapshot.value
+                self.profileEmailLabel?.text = email as? String
+                
+            }
+        })
+        
     }
     
-    override func prefersStatusBarHidden() -> Bool {
-        return true
-    }
-    
+    // MARK: Actions
     
     @IBAction func dismissViewAction(sender: UIBarButtonItem) {
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-    // MARK: Actions
     @IBAction func profileLogoutButton(sender: UIButton) {
         
         let alert = UIAlertController(title: "Please select", message: "Are you sure you want to log out?", preferredStyle: .ActionSheet)
@@ -67,15 +77,5 @@ class ProfileViewController: UIViewController {
         
         
     }
-    
-    /*
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
-    }
-    */
     
 }

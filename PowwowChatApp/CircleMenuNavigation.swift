@@ -41,6 +41,7 @@ extension MasterTableViewController: CircleMenuDelegate {
                 print("Error finding Search View Controller!")
                 return
             }
+            
             self.navigationController?.presentViewController(searchViewController, animated: true, completion: nil)
         case 1:
             print("Cancel button")
@@ -51,9 +52,9 @@ extension MasterTableViewController: CircleMenuDelegate {
                 print("Error finding Profile view controller")
                 return
             }
+            
             self.navigationController?.presentViewController(profileViewController, animated: true) {
                 
-                print("profile")
                 
             }
         }

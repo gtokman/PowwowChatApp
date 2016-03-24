@@ -9,6 +9,7 @@
 import Foundation
 import Firebase
 
+var selectedUser = [String]?()
 
 var newAlert = SweetAlert()
 struct User {
@@ -36,7 +37,8 @@ struct User {
     var email: String
     var key: String?
     let ref: Firebase?
-   // var image: String
+   
+    // Memberwise init
     
     init(uid: String, email: String, key: String?, ref: Firebase?) {
         self.uid = uid
@@ -45,14 +47,16 @@ struct User {
         self.ref = ref
     }
     
+    
+    // Instance methods
+    
     func toAnyObject() -> AnyObject {
+        
         return [
             "name": email,
             "uid": uid,
         ]
     }
-    
-  
 }
 
 extension User {

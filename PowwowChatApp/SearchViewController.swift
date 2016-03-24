@@ -27,38 +27,37 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        displayCurrentUsersInSearch()
         
-         getGurrentUser()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       
         searchDesignProperties()
     }
     
     
     // MARK: Helper
     
-    func getGurrentUser () {
+    func displayCurrentUsersInSearch() {
         
         let usersRef = baseURL.childByAppendingPath("Users")
         
         usersRef.observeEventType( .ChildAdded, withBlock: { snapshot in
-        
+            
             print("The value is \(snapshot.value)")
             
-           let user = User(uid: "", email: snapshot.value as! String, key: nil, ref: nil)
-        
+            let user = User(uid: "", email: snapshot.value as! String, key: nil, ref: nil)
+            
+            // Add users to model
             self.users.append(user)
-            print(self.users.count)
             self.tableView?.reloadData()
-        
+            
         })
         
-        
     }
+    
     
     // MARK: Table view data source
     
@@ -103,10 +102,12 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        let selectedCell = indexPath.row
+        let selectedCell = users[indexPath.row].email
+        
         
         dismissViewControllerAnimated(true, completion: {
-        
+            
+            print("Selected email: \(selectedCell)")
             
             
         })
@@ -114,11 +115,9 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         
     }
     
-    
-    
     @IBAction func dismissViewButton(sender: UIBarButtonItem) {
         dismissViewControllerAnimated(true, completion: nil)
     }
-
-
+    
+    
 }
