@@ -22,7 +22,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     
     var filteredUsers = [User]()
     var users = [User]()
-  
+    
     // MARK: View Life Cycle
     
     override func viewDidAppear(animated: Bool) {
@@ -108,7 +108,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         dismissViewControllerAnimated(true, completion: {
             
             print("Selected email: \(selectedCell)")
-           
+            
             
         })
         

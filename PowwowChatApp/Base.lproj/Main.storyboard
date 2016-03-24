@@ -222,7 +222,7 @@
                                     <constraint firstAttribute="height" constant="39" id="oka-Ym-DnE"/>
                                 </constraints>
                                 <state key="normal" image="Main"/>
-                                <state key="selected" image="Cancel"/>
+                                <state key="selected" image="Selected"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="buttonsCount">
                                         <integer key="value" value="3"/>
@@ -562,11 +562,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Cancel" width="39" height="39"/>
         <image name="Dismiss" width="15" height="15"/>
         <image name="Logo" width="115" height="21"/>
         <image name="Main" width="39" height="39"/>
         <image name="Profile" width="39" height="39"/>
+        <image name="Selected" width="39" height="39"/>
         <image name="SignUpLogo" width="264" height="132"/>
         <image name="TextFieldBg" width="321" height="42"/>
     </resources>
