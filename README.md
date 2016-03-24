@@ -1,4 +1,4 @@
-# PowwowChatApp
+# Powwow Chat App
 
 *A whole new communication experience for college students.*
 
